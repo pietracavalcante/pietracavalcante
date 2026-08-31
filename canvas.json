@@ -1,0 +1,16 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 960, "h": 1300, "title": "Costas — arte principal" },
+    { "file": "DirecaoB.dc.html", "x": 1080, "y": 0, "w": 960, "h": 1300, "title": "Direção B — cru e tinta" },
+    { "file": "DirecaoC.dc.html", "x": 2160, "y": 0, "w": 960, "h": 1300, "title": "Direção C — depurada" },
+    { "file": "Peito.dc.html", "x": 0, "y": 1440, "w": 360, "h": 420, "title": "Peito esquerdo" },
+    { "file": "Mockup.dc.html", "x": 500, "y": 1440, "w": 1440, "h": 900, "title": "Mockup — frente e costas" }
+  ],
+  "annotations": [
+    { "id": "nota-principal", "x": 0, "y": -150, "w": 460, "text": "Arte de costas — área de impressão 25 × 33 cm (A3 vertical).\nDourado #C6A15B sobre preto profundo; a gravura é vetorial, sai limpa em serigrafia ou DTF." },
+    { "id": "nota-b", "x": 1080, "y": -150, "w": 460, "text": "Direção B — mesma gravura em tinta sobre malha crua, dourado só na tipografia. Mais discreta, boa para o dia da festa sob sol." },
+    { "id": "nota-c", "x": 2160, "y": -150, "w": 460, "text": "Direção C — só a figura, sem arco nem serpente, tipografia mínima. A leitura mais silenciosa e contemporânea." },
+    { "id": "nota-peito", "x": 0, "y": 1920, "w": 460, "text": "Emblema de peito: ~8 cm de altura. Só espada, nimbo radiado e asas — sem detalhe fino que suma no tamanho pequeno." }
+  ],
+  "launch": { "view": "canvas" }
+}

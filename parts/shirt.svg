@@ -1,0 +1,8 @@
+<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;filter:drop-shadow(0 18px 34px rgba(20,16,10,.28))">
+  <path d="M152,42 C130,48 112,56 96,66 L36,102 C30,106 28,112 31,118 L54,168 C57,175 64,177 70,173 L92,157 L92,432 C92,444 100,452 112,452 L288,452 C300,452 308,444 308,432 L308,157 L330,173 C336,177 343,175 346,168 L369,118 C372,112 370,106 364,102 L304,66 C288,56 270,48 248,42 C242,68 222,82 200,82 C178,82 158,68 152,42 Z" fill="#131519" stroke="#2A2E37" stroke-width="1.6"/>
+  <path d="__COLLAR__" fill="none" stroke="#2E323C" stroke-width="2.2"/>
+  <path d="M104,180 C100,250 100,340 106,438" fill="none" stroke="#1B1E25" stroke-width="1.4" opacity=".8"/>
+  <path d="M296,180 C300,250 300,340 294,438" fill="none" stroke="#1B1E25" stroke-width="1.4" opacity=".8"/>
+  <path d="M120,96 C112,120 108,140 108,158" fill="none" stroke="#1B1E25" stroke-width="1.2" opacity=".7"/>
+  <path d="M280,96 C288,120 292,140 292,158" fill="none" stroke="#1B1E25" stroke-width="1.2" opacity=".7"/>
+</svg>
