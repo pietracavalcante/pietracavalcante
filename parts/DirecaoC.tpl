@@ -7,7 +7,7 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Cormorant+Garamond:ital,wght@1,300&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap">
   <style>
     body { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; }
     a { color: #C6A15B; } a:hover { color: #E0C289; }

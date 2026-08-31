@@ -13,7 +13,7 @@
     a { color: #C6A15B; } a:hover { color: #E0C289; }
   </style>
 </helmet>
-<div style="--gold: #C6A15B; width: 360px; height: 420px; background: #0E0F13; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 28px; box-sizing: border-box">
+<div style="--gold: #C6A15B; width: 360px; height: 420px; background: #0E0F13; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 28px; box-sizing: border-box; overflow: hidden">
   <div style="width: 176px">
     <!--EMBLEM-->
   </div>
