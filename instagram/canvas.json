@@ -7,6 +7,10 @@
     {
       "id": "page-2",
       "name": "Feed"
+    },
+    {
+      "id": "page-3",
+      "name": "Direções"
     }
   ],
   "artboards": [
@@ -127,6 +131,33 @@
       "h": 1080,
       "page": "page-2",
       "title": "9 · Lançamento"
+    },
+    {
+      "file": "Linho.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1400,
+      "page": "page-3",
+      "title": "Linho e ouro claro"
+    },
+    {
+      "file": "Cetim.dc.html",
+      "x": 1200,
+      "y": 0,
+      "w": 1080,
+      "h": 1400,
+      "page": "page-3",
+      "title": "Noite de cetim"
+    },
+    {
+      "file": "Perola.dc.html",
+      "x": 2400,
+      "y": 0,
+      "w": 1080,
+      "h": 1400,
+      "page": "page-3",
+      "title": "Pérola e rosa-antigo"
     }
   ],
   "annotations": [
@@ -145,10 +176,18 @@
       "w": 520,
       "page": "page-2",
       "text": "Nove posts 1080 × 1080, na ordem de publicação (1 em cima à esquerda).\nOs dois claros — 3 e 7 — existem para abrir a grade; se trocar a ordem, mantenha-os em diagonal.\nAs legendas de cada um estão no artboard Legendas, na página Perfil."
+    },
+    {
+      "id": "nota-direcoes",
+      "x": 0,
+      "y": -230,
+      "w": 560,
+      "page": "page-3",
+      "text": "Três direções delicadas para a identidade — escolha uma e eu refaço o perfil, o avatar, os destaques e os nove posts nela.\n\nLinho: claro, de papel, a gravura bem fina em ouro velho.\nCetim: continua no preto, mas champanhe e itálico no lugar das versais.\nPérola: sai do preto-e-ouro para pérola, bordô suave e filete dourado.\n\nCada folha mostra o post de abertura, a foto de perfil, três quadros do feed e a paleta."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-2"
+    "page": "page-3"
   }
 }
