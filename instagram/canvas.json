@@ -1,0 +1,154 @@
+{
+  "pages": [
+    {
+      "id": "page-1",
+      "name": "Perfil"
+    },
+    {
+      "id": "page-2",
+      "name": "Feed"
+    }
+  ],
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "page-1",
+      "title": "Prévia do perfil"
+    },
+    {
+      "file": "Avatar.dc.html",
+      "x": 510,
+      "y": 0,
+      "w": 720,
+      "h": 720,
+      "page": "page-1",
+      "title": "Foto de perfil"
+    },
+    {
+      "file": "Destaques.dc.html",
+      "x": 1350,
+      "y": 0,
+      "w": 1080,
+      "h": 560,
+      "page": "page-1",
+      "title": "Capas de destaques"
+    },
+    {
+      "file": "Legendas.dc.html",
+      "x": 2550,
+      "y": 0,
+      "w": 820,
+      "h": 2840,
+      "page": "page-1",
+      "title": "Legendas e bio",
+      "print": "flow"
+    },
+    {
+      "file": "Post1.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "1 · Abertura"
+    },
+    {
+      "file": "Post2.dc.html",
+      "x": 1200,
+      "y": 0,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "2 · A arte"
+    },
+    {
+      "file": "Post3.dc.html",
+      "x": 2400,
+      "y": 0,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "3 · A peça"
+    },
+    {
+      "file": "Post4.dc.html",
+      "x": 0,
+      "y": 1200,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "4 · Oração"
+    },
+    {
+      "file": "Post5.dc.html",
+      "x": 1200,
+      "y": 1200,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "5 · O nome da casa"
+    },
+    {
+      "file": "Post6.dc.html",
+      "x": 2400,
+      "y": 1200,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "6 · O detalhe"
+    },
+    {
+      "file": "Post7.dc.html",
+      "x": 0,
+      "y": 2400,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "7 · Direção crua"
+    },
+    {
+      "file": "Post8.dc.html",
+      "x": 1200,
+      "y": 2400,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "8 · Ficha"
+    },
+    {
+      "file": "Post9.dc.html",
+      "x": 2400,
+      "y": 2400,
+      "w": 1080,
+      "h": 1080,
+      "page": "page-2",
+      "title": "9 · Lançamento"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "nota-perfil",
+      "x": 0,
+      "y": -190,
+      "w": 460,
+      "page": "page-1",
+      "text": "Perfil @quisutdeusatelie.\nA foto de perfil é o emblema sozinho — o círculo tracejado marca o corte redondo do Instagram.\nBio, link, cidade e preço estão entre [colchetes] para você preencher."
+    },
+    {
+      "id": "nota-feed",
+      "x": 0,
+      "y": -190,
+      "w": 520,
+      "page": "page-2",
+      "text": "Nove posts 1080 × 1080, na ordem de publicação (1 em cima à esquerda).\nOs dois claros — 3 e 7 — existem para abrir a grade; se trocar a ordem, mantenha-os em diagonal.\nAs legendas de cada um estão no artboard Legendas, na página Perfil."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "page-2"
+  }
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; }
+    a { color: #C6A15B; } a:hover { color: #E0C289; }
+  </style>
+</helmet>
+<div style="--gold: {{gold}}; --bone: #EDE6D6; position: relative; width: 1080px; height: 1080px; background: #0E0F13; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 104px 96px 150px; box-sizing: border-box; overflow: hidden">
+<div style="position: absolute; left: 46px; top: 46px; right: 46px; bottom: 46px; border: 1px solid #C6A15B; opacity: .32; pointer-events: none"></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 34px"><div style="width: 286px"><svg class="emb" viewBox="0 0 204 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block">
+<style>
+.emb .l1{fill:none;stroke:var(--gold);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.emb .l2{fill:none;stroke:var(--gold);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.emb .l3{fill:none;stroke:var(--gold);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+</style>
+<defs>
+  <g id="ewR">
+    <path class="l2" d="M102,128 Q109,89 129,55"/>
+    <path class="l2" d="M102,128 Q122,89 155,60"/>
+    <path class="l2" d="M102,128 Q134,97 175,79"/>
+    <path class="l2" d="M102,128 Q139,108 180,103"/>
+    <path class="l2" d="M102,128 Q138,117 176,122"/>
+    <path class="l3" d="M129,55 Q144,54 155,60 Q168,66 175,79 Q180,90 180,103 Q179,114 176,122"/>
+  </g>
+</defs>
+<circle class="l2" cx="102" cy="124" r="66" style="stroke-width:13;stroke-dasharray:1.6 14.6;stroke-linecap:butt;opacity:.7"/>
+<circle class="l3" cx="102" cy="124" r="57"/>
+<use href="#ewR"/>
+<use href="#ewR" transform="translate(204,0) scale(-1,1)"/>
+<circle class="l1" cx="102" cy="46" r="7.5"/>
+<path class="l2" d="M97,53 L107,53 L107,78 L97,78 Z"/>
+<path class="l3" d="M97,60 L107,57"/>
+<path class="l3" d="M97,68 L107,65"/>
+<path class="l1" d="M66,82 C78,77 126,77 138,82 C126,87 78,87 66,82 Z"/>
+<path class="l1" d="M96,86 L108,86 L104,244 L102,258 L100,244 Z"/>
+<path class="l3" d="M102,94 L102,238"/>
+<path class="l2" d="M84,240 C92,252 96,258 102,258 C108,258 112,252 120,240"/>
+<path class="l3" d="M84,240 C75,236 73,250 82,251"/>
+<path class="l3" d="M120,240 C129,236 131,250 122,251"/>
+</svg>
+</div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-weight: 500; font-size: 96px; line-height: 1; letter-spacing: .12em; color: var(--bone); text-indent: .12em">QUIS UT DEUS</div><div style="display: flex; align-items: center; gap: 26px; width: 700px"><div style="flex-grow: 1; height: 1px; background: var(--gold); opacity: .55"></div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-size: 34px; letter-spacing: .46em; color: var(--gold); text-indent: .46em">ATELI&#202;</div><div style="flex-grow: 1; height: 1px; background: var(--gold); opacity: .55"></div></div><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; font-size: 44px; letter-spacing: .04em; color: var(--bone); opacity: .84; margin-top: 6px">Pe&#231;as de devo&#231;&#227;o, desenhadas e impressas uma a uma.</div></div>
+<div style="position: absolute; left: 0; right: 0; bottom: 74px; text-align: center; font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-weight: 400; font-size: 22px; letter-spacing: .46em; color: #C6A15B; opacity: .62; text-indent: .46em">QUIS UT DEUS &#183; ATELI&#202;</div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"gold": {"editor": "color", "default": "#C6A15B", "options": ["#C6A15B", "#D8B77A", "#8C6B34", "#EDE6D6"], "section": "Cor"}, "$preview": {"width": 1080, "height": 1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { gold: this.props.gold ?? '#C6A15B' };
+  }
+}
+</script>
+</body>
+</html>

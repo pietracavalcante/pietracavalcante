@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; }
+    a { color: #C6A15B; } a:hover { color: #E0C289; }
+  </style>
+</helmet>
+<div style="--gold: {{gold}}; --bone: #EDE6D6; position: relative; width: 1080px; height: 1080px; background: #0E0F13; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 104px 96px 150px; box-sizing: border-box; overflow: hidden">
+<div style="position: absolute; left: 46px; top: 46px; right: 46px; bottom: 46px; border: 1px solid #C6A15B; opacity: .32; pointer-events: none"></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 36px"><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: .44em; color: #C6A15B; opacity: .8; text-indent: .44em">LAN&#199;AMENTO</div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-weight: 500; font-size: 104px; line-height: 1.06; letter-spacing: .1em; color: var(--bone); text-indent: .1em; text-align: center">[DIA] DE [M&#202;S]</div><div style="width: 360px; height: 1px; background: #C6A15B; opacity: .5"></div><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; font-size: 46px; line-height: 1.4; color: var(--gold); text-align: center; max-width: 760px">Primeira tiragem, quantidade contada.</div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-size: 26px; letter-spacing: .36em; color: var(--bone); opacity: .86; text-indent: .36em; text-align: center; line-height: 1.9">ENCOMENDAS PELO DIRECT<br>[LINK DA LOJA]</div></div>
+<div style="position: absolute; left: 0; right: 0; bottom: 74px; text-align: center; font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-weight: 400; font-size: 22px; letter-spacing: .46em; color: #C6A15B; opacity: .62; text-indent: .46em">QUIS UT DEUS &#183; ATELI&#202;</div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"gold": {"editor": "color", "default": "#C6A15B", "options": ["#C6A15B", "#D8B77A", "#8C6B34", "#EDE6D6"], "section": "Cor"}, "$preview": {"width": 1080, "height": 1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { gold: this.props.gold ?? '#C6A15B' };
+  }
+}
+</script>
+</body>
+</html>

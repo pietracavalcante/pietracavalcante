@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; }
+    a { color: #C6A15B; } a:hover { color: #E0C289; }
+  </style>
+</helmet>
+<div style="--gold: {{gold}}; --bone: #EDE6D6; position: relative; width: 1080px; height: 560px; background: #0E0F13; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 56px; padding: 56px; box-sizing: border-box; overflow: hidden"><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-weight: 400; font-size: 22px; letter-spacing: .44em; color: #C6A15B; opacity: .8; text-indent: .44em">CAPAS DE DESTAQUES</div><div style="display: flex; gap: 38px; justify-content: center"><div style="display: flex; flex-direction: column; align-items: center; gap: 22px"><div style="width: 180px; height: 180px; border-radius: 50%; background: #0E0F13; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="76" height="76" style="display:block; fill:none; stroke:var(--gold); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round"><path d="M8.5 3 L5 5 L3.5 9 L6 10 L6 21 L18 21 L18 10 L20.5 9 L19 5 L15.5 3 C15 4.8 13.6 5.8 12 5.8 C10.4 5.8 9 4.8 8.5 3 Z"/></svg></div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-size: 20px; letter-spacing: .3em; color: var(--bone); opacity: .86; text-indent: .3em">PE&#199;AS</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 22px"><div style="width: 180px; height: 180px; border-radius: 50%; background: #0E0F13; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="76" height="76" style="display:block; fill:none; stroke:var(--gold); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round"><circle cx="12" cy="13" r="5.2"/><path d="M12 2.4 L12 5"/><path d="M5.2 5.2 L7 7"/><path d="M18.8 5.2 L17 7"/><path d="M3 12 L5.4 12"/><path d="M21 12 L18.6 12"/></svg></div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-size: 20px; letter-spacing: .3em; color: var(--bone); opacity: .86; text-indent: .3em">SANTOS</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 22px"><div style="width: 180px; height: 180px; border-radius: 50%; background: #0E0F13; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="76" height="76" style="display:block; fill:none; stroke:var(--gold); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round"><path d="M20.5 3.5 L10 14"/><path d="M8.2 15.8 L6 21 L11.2 18.8 Z"/><path d="M17.6 4.4 C14 2.6 10.6 4.4 11.4 7.6"/></svg></div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-size: 20px; letter-spacing: .3em; color: var(--bone); opacity: .86; text-indent: .3em">PROCESSO</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 22px"><div style="width: 180px; height: 180px; border-radius: 50%; background: #0E0F13; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="76" height="76" style="display:block; fill:none; stroke:var(--gold); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round"><path d="M3 6 L21 6 L21 18 L3 18 Z"/><path d="M3 6.8 L12 13 L21 6.8"/></svg></div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-size: 20px; letter-spacing: .3em; color: var(--bone); opacity: .86; text-indent: .3em">PEDIDOS</div></div><div style="display: flex; flex-direction: column; align-items: center; gap: 22px"><div style="width: 180px; height: 180px; border-radius: 50%; background: #0E0F13; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center"><svg viewBox="0 0 24 24" width="76" height="76" style="display:block; fill:none; stroke:var(--gold); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round"><path d="M12 3 L12 21"/><path d="M6.5 8.6 L17.5 8.6"/><circle cx="12" cy="23" r="0"/></svg></div><div style="font-family: 'Cinzel', 'Trajan Pro', Georgia, serif; font-size: 20px; letter-spacing: .3em; color: var(--bone); opacity: .86; text-indent: .3em">ORA&#199;&#195;O</div></div></div></div>
+</x-dc>
+<script data-dc-script data-props='{"gold": {"editor": "color", "default": "#C6A15B", "options": ["#C6A15B", "#D8B77A", "#8C6B34", "#EDE6D6"], "section": "Cor"}, "$preview": {"width": 1080, "height": 560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { gold: this.props.gold ?? '#C6A15B' };
+  }
+}
+</script>
+</body>
+</html>
