@@ -174,6 +174,58 @@ def dezena(uid, hi, mid, lo, edge, thread, cross_hi, cross_lo):
             % (gradients(uid, hi, mid, lo, edge), ring, beads, stem + knot, cross))
 
 
+def pulseira(uid, hi, mid, lo, edge, thread, cross_hi, cross_lo):
+    """Pulseira de dezena: aro fechado de contas com cruz pendurada."""
+    cx, cy, R, r_a = 150.0, 136.0, 100.0, 15.6
+    beads = ''
+    for i in range(12):
+        ang = math.radians(-90.0) + math.radians(360.0) * i / 12.0
+        beads += bead(cx + R * math.cos(ang), cy + R * math.sin(ang), r_a, uid, 'a')
+    ring = ('<circle cx="%.1f" cy="%.1f" r="%.1f" fill="none" stroke="%s" stroke-width="1.6" '
+            'opacity=".7"/>' % (cx, cy, R, thread))
+    ct = cy + R + 26
+    charm = ('<path d="M150,%.1f L150,%.1f" stroke="%s" stroke-width="1.5" opacity=".7" '
+             'fill="none"/>'
+             '<defs><linearGradient id="%s-cr" x1="0" y1="0" x2="1" y2="1">'
+             '<stop offset="0" stop-color="%s"/><stop offset="1" stop-color="%s"/>'
+             '</linearGradient></defs>'
+             '<path d="M144,%.1f L156,%.1f L156,%.1f L180,%.1f L180,%.1f L156,%.1f '
+             'L156,%.1f L144,%.1f L144,%.1f L120,%.1f L120,%.1f L144,%.1f Z" '
+             'fill="url(#%s-cr)" stroke="%s" stroke-width=".9" stroke-linejoin="round"/>'
+             % (cy + R - 4, ct, thread, uid, cross_hi, cross_lo,
+                ct, ct, ct + 28, ct + 28, ct + 40, ct + 40,
+                ct + 104, ct + 104, ct + 40, ct + 40, ct + 28, ct + 28, uid, lo))
+    return ('<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" '
+            'style="width:100%%; height:auto; display:block">%s%s%s%s</svg>'
+            % (gradients(uid, hi, mid, lo, edge), ring, beads, charm))
+
+
+def chaveiro(uid, hi, mid, lo, edge, thread, cross_hi, cross_lo, metal='#A9874B'):
+    """Chaveiro: argola de metal, punhado de contas e cruz."""
+    arg = ('<circle cx="150" cy="46" r="34" fill="none" stroke="%s" stroke-width="7" '
+           'opacity=".95"/><circle cx="150" cy="42" r="34" fill="none" stroke="#FFFFFF" '
+           'stroke-width="2.4" opacity=".35"/>' % metal)
+    ys = [104, 134, 160, 186, 212, 242]
+    strand = '<path d="M150,80 L150,%d" stroke="%s" stroke-width="1.6" opacity=".7" ' \
+             'fill="none"/>' % (ys[-1], thread)
+    for i, y in enumerate(ys):
+        strand += bead(150, y, 15.0 if i in (0, 5) else 11.4, uid,
+                       'p' if i in (0, 5) else 'a')
+    ct = ys[-1] + 24
+    cross = ('<defs><linearGradient id="%s-cr" x1="0" y1="0" x2="1" y2="1">'
+             '<stop offset="0" stop-color="%s"/><stop offset="1" stop-color="%s"/>'
+             '</linearGradient></defs>'
+             '<path d="M143,%.1f L157,%.1f L157,%.1f L186,%.1f L186,%.1f L157,%.1f '
+             'L157,%.1f L143,%.1f L143,%.1f L114,%.1f L114,%.1f L143,%.1f Z" '
+             'fill="url(#%s-cr)" stroke="%s" stroke-width=".9" stroke-linejoin="round"/>'
+             % (uid, cross_hi, cross_lo,
+                ct, ct, ct + 32, ct + 32, ct + 46, ct + 46,
+                ct + 116, ct + 116, ct + 46, ct + 46, ct + 32, ct + 32, uid, lo))
+    return ('<svg viewBox="0 0 300 420" xmlns="http://www.w3.org/2000/svg" '
+            'style="width:100%%; height:auto; display:block">%s%s%s%s</svg>'
+            % (gradients(uid, hi, mid, lo, edge), arg, strand, cross))
+
+
 # ================================================================ peças de apoio
 def photo_slot(w, h, bg, frame_col, label_col, label, note='', radius='0'):
     return (
@@ -409,23 +461,26 @@ write('Fotos.dc.html', FONTS_IT,
       % (GRAIN, CORM, shot_cards, CORM), 1080, 1400)
 
 # ========================================================= prévia do perfil (Main)
-HL = [('terço', 'TERÇOS'), ('dezena', 'DEZENAS'), ('medalha', 'MEDALHAS'),
-      ('encomenda', 'ENCOMENDAS'), ('oração', 'ORAÇÃO')]
+HL = [('encomenda', 'ENCOMENDAR'), ('terço', 'TERÇOS'), ('pulseira', 'PULSEIRAS'),
+      ('chaveiro', 'CHAVEIROS'), ('dezena', 'DEZENAS')]
 
 HL_ICON = {
  'terço': '<circle cx="12" cy="9.4" r="6" stroke-dasharray="1.1 2.7"/>'
           '<path d="M12 16.6 L12 21.6"/><path d="M9.8 18.8 L14.2 18.8"/>',
  'dezena': '<path d="M12 2.8 L12 13.8" stroke-dasharray="1.1 2.5"/>'
            '<path d="M12 15.4 L12 21.4"/><path d="M9.7 17.6 L14.3 17.6"/>',
- 'medalha': '<ellipse cx="12" cy="13" rx="5.4" ry="6.4"/><ellipse cx="12" cy="13" rx="2.4" ry="3"/>'
-            '<path d="M12 6.6 L12 3.6"/>',
+ 'pulseira': '<circle cx="12" cy="10.4" r="6.6" stroke-dasharray="1.2 2.5"/>'
+             '<path d="M12 17.6 L12 21.8"/><path d="M10.1 19.4 L13.9 19.4"/>',
+ 'chaveiro': '<circle cx="12" cy="5.2" r="2.8"/><path d="M12 8.2 L12 14.4" '
+             'stroke-dasharray="1.1 2.3"/><path d="M12 15.4 L12 21.6"/>'
+             '<path d="M9.9 17.6 L14.1 17.6"/>',
  'encomenda': '<path d="M3 6 L21 6 L21 18 L3 18 Z"/><path d="M3 6.8 L12 13 L21 6.8"/>',
  'oração': '<path d="M12 3.4 L12 20.6"/><path d="M7.4 8.6 L16.6 8.6"/>',
 }
 
-GRID = [('foto', 'O terço inteiro'), ('type', 'QUIS<br>UT<br>DEUS'), ('foto', 'A conta de perto'),
-        ('dez', ''), ('foto', 'Na mão'), ('type', 'DEZ CONTAS<br>POR DIA'),
-        ('foto', 'A bancada'), ('type', 'FEITO<br>À MÃO'), ('foto', 'Encomendas')]
+GRID = [('foto', 'O terço inteiro'), ('type', 'DO SEU<br>JEITO'), ('foto', 'A pulseira no pulso'),
+        ('dez', ''), ('foto', 'A conta de perto'), ('type', 'ESCOLHA<br>A COR'),
+        ('foto', 'O chaveiro'), ('type', 'FEITO<br>À MÃO'), ('foto', 'A bancada')]
 
 cells = ''
 for kind, label in GRID:
@@ -481,12 +536,13 @@ main = (
     '<div style="display: flex; flex-grow: 1; justify-content: space-around">%s%s%s</div></div>'
     '<div style="display: flex; flex-direction: column; gap: 5px; padding: 0 16px 14px">'
     '<div style="font-family: %s; font-weight: 600; font-size: 13px; color: %s">'
-    'Qui Sut Deus &#183; Ateli&#234;</div>'
+    'Ter&#231;os e pulseiras cat&#243;licas</div>'
     '<div style="font-family: %s; font-size: 12px; color: %s">Ter&#231;os feitos &#224; m&#227;o</div>'
     '<div style="font-family: %s; font-size: 13px; line-height: 1.5; color: %s">'
-    '&#8220;Quem como Deus?&#8221;<br>Ter&#231;os e dezenas montados um a um, conta por conta.<br>'
-    'Encomendas pelo direct &#183; [CIDADE]</div>'
-    '<div style="font-family: %s; font-size: 13px; color: %s">[LINK DA LOJA]</div></div>'
+    '&#127808; Ter&#231;os, dezenas, pulseiras e chaveiros<br>'
+    '&#127912; Feitos &#224; m&#227;o, do seu jeito<br>'
+    '&#128666; Envio para todo o Brasil<br>&#128233; Encomendas pelo direct</div>'
+    '</div>'
     '<div style="display: flex; gap: 8px; padding: 0 16px 18px">%s%s</div>'
     '<div style="display: flex; gap: 14px; padding: 0 16px 18px">%s</div>'
     '<div style="display: flex; border-top: 1px solid rgba(58,53,44,.14)">'
@@ -505,7 +561,7 @@ main = (
        stat % (sans, A['ink'], '9', sans, A['soft'], 'publica&#231;&#245;es'),
        stat % (sans, A['ink'], '[&#8212;]', sans, A['soft'], 'seguidores'),
        stat % (sans, A['ink'], '[&#8212;]', sans, A['soft'], 'seguindo'),
-       sans, A['ink'], sans, A['gold'], sans, A['ink'], sans, A['gold'],
+       sans, A['ink'], sans, A['gold'], sans, A['ink'],
        btn % 'Editar perfil', btn % 'Compartilhar perfil', hl_row,
        A['gold'], A['ink'], cells))
 write('Main.dc.html', FONTS_IT, main, 390, 1010)
@@ -546,6 +602,56 @@ write('Destaques.dc.html', FONTS_IT,
       '<div style="display: flex; gap: 36px; position: relative">%s</div></div>'
       % (A['bg'], GRAIN, A['soft'], covers), 1080, 560)
 
+# ============================================================ a família de peças
+PECAS = [('TER&#199;O', 'cinco dezenas, medalha e cruz', 'ros'),
+         ('DEZENA', 'de m&#227;o, para levar no bolso', 'dez'),
+         ('PULSEIRA', 'aro fechado, com cruz ou medalha', 'pul'),
+         ('CHAVEIRO', 'argola de metal e punhado de contas', 'cha')]
+
+PECA_ART = {
+ 'ros': ('<div style="width: 210px">%s</div>'
+         % rosary('fa1', '#C9A574', '#9E7647', '#6B4A2A', '#5A3D22', '#8A6B45',
+                  '#B98F55', '#7A5530')),
+ 'dez': ('<div style="width: 132px">%s</div>'
+         % dezena('fa2', '#C9A574', '#9E7647', '#6B4A2A', '#5A3D22', '#8A6B45',
+                  '#B98F55', '#7A5530')),
+ 'pul': ('<div style="width: 172px">%s</div>'
+         % pulseira('fa3', '#C9A574', '#9E7647', '#6B4A2A', '#5A3D22', '#8A6B45',
+                    '#B98F55', '#7A5530')),
+ 'cha': ('<div style="width: 146px">%s</div>'
+         % chaveiro('fa4', '#C9A574', '#9E7647', '#6B4A2A', '#5A3D22', '#8A6B45',
+                    '#B98F55', '#7A5530')),
+}
+
+pecas_html = ''.join(
+    '<div style="display: flex; flex-direction: column; align-items: center; gap: 18px; '
+    'flex-grow: 1">'
+    '<div style="height: 470px; display: flex; align-items: center; '
+    'justify-content: center">%s</div>'
+    '<div style="font-family: \'Italiana\', Georgia, serif; font-size: 25px; '
+    'letter-spacing: .3em; color: %s; text-indent: .3em">%s</div>'
+    '<div style="font-family: %s; font-style: italic; font-size: 22px; line-height: 1.35; '
+    'color: %s; text-align: center; max-width: 220px">%s</div></div>'
+    % (PECA_ART[k], A['ink'], nome, CORM, A['soft'], sub) for nome, sub, k in PECAS)
+
+write('Familia.dc.html', FONTS_IT,
+      '<div style="position: relative; width: 1400px; height: 1000px; background: %s; '
+      'display: flex; flex-direction: column; gap: 34px; padding: 64px 60px; '
+      'box-sizing: border-box; overflow: hidden">'
+      '<div style="position: absolute; inset: 0; background: radial-gradient(70%% 55%% at 50%% 38%%, '
+      'rgba(255,253,247,.95) 0%%, rgba(232,223,203,.5) 100%%)"></div>'
+      '<div style="position: absolute; inset: 0; background-image: %s; '
+      'background-size: 180px 180px; opacity: .06"></div>'
+      '<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; '
+      'position: relative">'
+      '<div style="font-family: \'Italiana\', Didot, Georgia, serif; font-size: 44px; '
+      'letter-spacing: .2em; color: %s; text-indent: .2em">A FAM&#205;LIA DE PE&#199;AS</div>'
+      '<div style="font-family: %s; font-style: italic; font-size: 23px; color: %s">'
+      'o mesmo desenho de conta em quatro formatos &#8212; tudo sob encomenda</div></div>'
+      '<div style="display: flex; align-items: flex-start; gap: 28px; position: relative">%s</div>'
+      '</div>' % (A['bg'], GRAIN, A['ink'], CORM, A['soft'], pecas_html), 1400, 1000)
+
+
 # ------------------------------------------------------------------- canvas.json
 canvas = {
   "pages": [{"id": "page-1", "name": "Direções"}, {"id": "page-2", "name": "Perfil"}],
@@ -564,6 +670,8 @@ canvas = {
      "title": "Foto de perfil"},
     {"file": "Destaques.dc.html", "x": 1350, "y": 0, "w": 1080, "h": 560, "page": "page-2",
      "title": "Capas de destaques"},
+    {"file": "Familia.dc.html", "x": 1350, "y": 700, "w": 1400, "h": 1000, "page": "page-2",
+     "title": "A família de peças"},
   ],
   "annotations": [
     {"id": "nota-direcoes", "x": 0, "y": -250, "w": 560, "page": "page-1",
@@ -573,7 +681,7 @@ canvas = {
              "o que só você tem: foto do que sai da sua mão. Marquei os quatro quadros "
              "e o que fotografar em cada um."},
     {"id": "nota-perfil", "x": 0, "y": -210, "w": 480, "page": "page-2",
-     "text": "O perfil montado na direção Madeira e linho, para você ver a grade de pé.\n\n"
+     "text": "O perfil montado na direção Madeira e linho, com terço, dezena, pulseira e chaveiro.\n\n"
              "Os quadros marcados FOTO são os que esperam a sua imagem; os outros são "
              "tipográficos e eu já entrego prontos.\n\n[CIDADE] e [LINK DA LOJA] ficaram "
              "entre colchetes para você preencher."},

@@ -72,6 +72,15 @@
       "h": 560,
       "page": "page-2",
       "title": "Capas de destaques"
+    },
+    {
+      "file": "Familia.dc.html",
+      "x": 1350,
+      "y": 700,
+      "w": 1400,
+      "h": 1000,
+      "page": "page-2",
+      "title": "A família de peças"
     }
   ],
   "annotations": [
@@ -89,7 +98,7 @@
       "y": -210,
       "w": 480,
       "page": "page-2",
-      "text": "O perfil montado na direção Madeira e linho, para você ver a grade de pé.\n\nOs quadros marcados FOTO são os que esperam a sua imagem; os outros são tipográficos e eu já entrego prontos.\n\n[CIDADE] e [LINK DA LOJA] ficaram entre colchetes para você preencher."
+      "text": "O perfil montado na direção Madeira e linho, com terço, dezena, pulseira e chaveiro.\n\nOs quadros marcados FOTO são os que esperam a sua imagem; os outros são tipográficos e eu já entrego prontos.\n\n[CIDADE] e [LINK DA LOJA] ficaram entre colchetes para você preencher."
     }
   ],
   "launch": {
