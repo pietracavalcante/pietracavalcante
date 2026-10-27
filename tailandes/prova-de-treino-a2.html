@@ -1,0 +1,159 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Prova de treino A2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one narrow exam column, section headers carry the real Thai instruction + word-by-word gloss */
+:root{
+  --bg:#f6f7f4; --paper:#ffffff; --ink:#1f2420; --muted:#5d6660; --line:#dfe4de;
+  --accent:#1f6b52; --accent-soft:#e3f0ea; --ok:#1d7a3e; --ok-soft:#e2f4e7; --bad:#b3261e; --bad-soft:#fbe7e5; --warn:#8a5a00;
+  --thai:"Thonburi","Noto Sans Thai",sans-serif; --body:"Source Sans 3",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141816; --paper:#1d2320; --ink:#e7ece8; --muted:#a3ada6; --line:#2f3833;
+  --accent:#6cc7a3; --accent-soft:#1f3a2f; --ok:#6fd38f; --ok-soft:#1e3626; --bad:#f2948c; --bad-soft:#3d2220; --warn:#e6b85c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141816; --paper:#1d2320; --ink:#e7ece8; --muted:#a3ada6; --line:#2f3833;
+  --accent:#6cc7a3; --accent-soft:#1f3a2f; --ok:#6fd38f; --ok-soft:#1e3626; --bad:#f2948c; --bad-soft:#3d2220; --warn:#e6b85c; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.45}
+.wrap{max-width:640px;margin:0 auto;padding-block:20px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
+header h1{font-size:1.6rem;margin:0;text-wrap:balance}
+header p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
+.th{font-family:var(--thai);}
+section{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sh{background:var(--accent-soft);padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.sh .big{font-family:var(--thai);font-size:1.55rem;font-weight:700;color:var(--accent)}
+.sh .pt{font-size:.95rem;color:var(--ink)}
+.gloss{display:flex;flex-wrap:wrap;gap:4px 14px}
+.gloss span{display:inline-flex;flex-direction:column;align-items:center;font-size:.75rem;color:var(--muted)}
+.gloss b{font-family:var(--thai);font-size:1.05rem;color:var(--ink);font-weight:600}
+.sh .tip{font-size:.85rem;color:var(--warn)}
+.q{padding:12px 14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.q:first-of-type{border-top:0}
+.stem{font-weight:600}
+.stem .n{color:var(--muted);margin-right:6px;font-variant-numeric:tabular-nums}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:9px 12px;cursor:pointer;font-family:var(--thai);font-size:1.15rem;background:var(--paper)}
+.opt input{width:20px;height:20px;accent-color:var(--accent);flex:none}
+.opt .l{font-family:var(--body);font-weight:700;color:var(--muted);font-size:.95rem}
+.opt.right{background:var(--ok-soft);border-color:var(--ok)}
+.opt.wrong{background:var(--bad-soft);border-color:var(--bad)}
+.expl{font-size:.92rem;border-radius:8px;padding:8px 10px;background:var(--accent-soft)}
+.expl .th{font-size:1.05em}
+textarea{width:100%;box-sizing:border-box;min-height:58px;font-family:var(--thai);font-size:1.15rem;border:1px solid var(--line);border-radius:8px;padding:8px;background:var(--bg);color:var(--ink)}
+.bar{display:flex;gap:10px;flex-wrap:wrap}
+button{font:inherit;font-weight:700;border:0;border-radius:8px;padding:12px 18px;cursor:pointer;background:var(--accent);color:var(--paper)}
+button.sec{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+button:focus-visible,.opt:focus-within{outline:3px solid var(--accent);outline-offset:2px}
+.score{font-size:1.2rem;font-weight:700;padding:12px 14px;border-radius:10px;background:var(--paper);border:1px solid var(--line)}
+.hint{color:var(--muted);font-size:.85rem}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>Prova de treino · Tailandês A2</h1>
+  <p>Só os pontos que mais derrubam: horas, <span class="th">ไม่ได้</span>, ordem da frase, comparativo, roupas, imperativo. Sem texto de interpretação. Responda tudo e toque em <b>Corrigir</b> no fim.</p>
+</header>
+<div id="exam"></div>
+<div class="score" id="score" hidden></div>
+<div class="bar">
+  <button id="check">Corrigir prova</button>
+  <button class="sec" id="reset">Apagar respostas e refazer</button>
+</div>
+<p class="hint">Suas respostas ficam salvas neste aparelho enquanto você faz.</p>
+</div>
+
+<script>
+const X=[["ข้อ","questão"],["ใด","qual"]];
+const S=[
+ {th:'ข้อใด “ถูกต้อง”',pt:'Qual alternativa está correta?',g:[...X,["ถูกต้อง","correta"]],qs:[
+  {s:'22:00',o:['สิบทุ่ม','สี่ทุ่ม','สองทุ่ม'],a:1,e:'Depois das 19h a conta recomeça: 22 − 18 = 4 → <span class="th">สี่ทุ่ม</span>.'},
+  {s:'“Eu não fui trabalhar.”',o:['ฉันไม่ไปทำงาน','ฉันไม่ได้ไปทำงาน','ฉันไปทำงานไม่ได้'],a:1,e:'<span class="th">ไม่ได้</span> + verbo = não fiz (passado). <span class="th">ไม่ไป</span> é “não vou”; <span class="th">ไปทำงานไม่ได้</span> é “não consigo ir trabalhar”.'},
+  {s:'13:00',o:['บ่ายหนึ่งโมง','บ่ายโมง','หนึ่งโมงเย็น'],a:1,e:'13h perde o “um”: <span class="th">บ่ายโมง</span>. 14h e 15h mantêm o número (<span class="th">บ่ายสองโมง</span>).'},
+  {s:'“Eu engordei.” (em relação a antes)',o:['ฉันอ้วนกว่า','ฉันอ้วนขึ้น','ฉันอ้วนลง'],a:1,e:'Mesma pessoa, dois momentos → <span class="th">ขึ้น</span> (subiu). <span class="th">กว่า</span> compara com outra pessoa.'},
+ ]},
+ {th:'ข้อใด “ไม่ถูกต้อง”',pt:'Qual alternativa está INCORRETA?',g:[...X,["ไม่","não"],["ถูกต้อง","correta"]],tip:'Atenção ao ไม่: aqui você marca a alternativa ERRADA.',qs:[
+  {s:'Hora e significado',o:['หกโมงเช้า = 6:00','ห้าโมงเย็น = 17:00','สามทุ่ม = 15:00'],a:2,e:'<span class="th">สามทุ่ม</span> é 21h (18 + 3). 15h é <span class="th">บ่ายสามโมง</span>.'},
+  {s:'Roupa e significado',o:['ถอดรองเท้า = tirar o sapato','สวมถุงเท้า = calçar a meia','ใส่กางเกง = tirar a calça'],a:2,e:'<span class="th">ใส่</span> é vestir. Tirar é <span class="th">ถอด</span>.'},
+  {s:'Ordem e significado',o:['อย่าลืม = não esqueça','ช่วยปิดประตูหน่อย = feche a porta, por favor','อย่าพูด = fale!'],a:2,e:'<span class="th">อย่า</span> na frente = proibição: <span class="th">อย่าพูด</span> = não fale.'},
+  {s:'Comparação e significado',o:['พ่อแก่กว่าแม่ = meu pai é mais velho que minha mãe','ฉันผอมลง = eu emagreci','มาลีสูงกว่าฉัน = eu sou mais alta que a Mali'],a:2,e:'Quem vem antes de <span class="th">กว่า</span> é quem tem “mais”: a Mali é mais alta que eu.'},
+ ]},
+ {th:'ข้อใดเขียนได้ถูกต้อง',pt:'Qual opção está escrita corretamente?',g:[...X,["เขียน","escrever"],["ได้","(foi) feito"],["ถูกต้อง","correto"]],qs:[
+  {s:'',o:['ฉันทุกวันดื่มกาแฟ','ฉันดื่มกาแฟทุกวัน','ดื่มฉันกาแฟทุกวัน'],a:1,e:'quem + verbo + objeto + quando → <span class="th">ฉันดื่มกาแฟทุกวัน</span> (eu bebo café todo dia).'},
+  {s:'',o:['ฉันใส่สีแดงเสื้อ','สีแดงฉันใส่เสื้อ','ฉันใส่เสื้อสีแดง'],a:2,e:'A cor vai no fim, depois da peça: <span class="th">เสื้อสีแดง</span> (blusa vermelha).'},
+  {s:'',o:['คุณชอบกาแฟไหม','คุณไหมชอบกาแฟ','ไหมคุณชอบกาแฟ'],a:0,e:'<span class="th">ไหม</span> vai no fim de tudo: <span class="th">คุณชอบกาแฟไหม</span> (você gosta de café?).'},
+  {s:'',o:['ฉันมีสองมือข้าง','ฉันมีมือสองข้าง','ฉันมีมือข้างสอง'],a:1,e:'substantivo + número + classificador: <span class="th">มือสองข้าง</span> (duas mãos).'},
+ ]},
+ {th:'ข้อใดเขียนไม่ถูกต้อง',pt:'Qual opção está escrita INCORRETAMENTE?',g:[...X,["เขียน","escrever"],["ไม่","não"],["ถูกต้อง","correto"]],tip:'De novo o ไม่: procure a frase com erro.',qs:[
+  {s:'',o:['คุณกินข้าว','คุณดื่มข้าว','คุณดื่มน้ำ'],a:1,e:'Arroz se come (<span class="th">กิน</span>). <span class="th">ดื่ม</span> é só para líquido.'},
+  {s:'',o:['เรากินข้าวแล้ว','เราแล้วกินข้าว','เราได้กินข้าว'],a:1,e:'<span class="th">แล้ว</span> vai DEPOIS do verbo e do objeto: <span class="th">เรากินข้าวแล้ว</span>. <span class="th">ได้</span> é que vai antes.'},
+  {s:'',o:['มาลีกว่าสูงฉัน','ฉันสูงกว่ามาลี','มาลีสูงกว่าฉัน'],a:0,e:'adjetivo + <span class="th">กว่า</span>: <span class="th">สูงกว่า</span>, nunca <span class="th">กว่าสูง</span>.'},
+  {s:'',o:['ฉันไปภูเก็ตมา','ฉันไม่ได้ไปตลาด','ฉันได้ไม่ไปตลาด'],a:2,e:'A negativa no passado é <span class="th">ไม่ได้</span> + verbo, nessa ordem.'},
+ ]},
+ {th:'ข้อใดเขียนได้ถูกต้องทั้งหมด',pt:'Qual alternativa está TOTALMENTE correta?',g:[...X,["เขียน","escrever"],["ได้","(foi) feito"],["ถูกต้อง","correto"],["ทั้งหมด","tudo"]],tip:'Só vale a alternativa em que as duas partes estão certas.',qs:[
+  {s:'',o:['สามทุ่ม = 21:00 · บ่ายโมง = 13:00','สองทุ่ม = 21:00 · บ่ายโมง = 13:00','สามทุ่ม = 21:00 · บ่ายหนึ่งโมง = 13:00'],a:0,e:'21 − 18 = 3 → <span class="th">สามทุ่ม</span>; 13h = <span class="th">บ่ายโมง</span>, sem “um”.'},
+  {s:'',o:['6:15 = หกโมงเช้าสิบห้านาที · 19:30 = หนึ่งทุ่มครึ่ง','6:15 = หกโมงสิบห้านาที · 19:30 = หนึ่งทุ่มครึ่ง','6:15 = หกโมงสิบห้านาที · 19:30 = เจ็ดทุ่มครึ่ง'],a:1,e:'Com minutos o <span class="th">เช้า</span> cai fora. 19h = <span class="th">หนึ่งทุ่ม</span> (19 − 18 = 1).'},
+  {s:'',o:['ฉันใส่เสื้อสีขาว · เขาสวมหมวก','ฉันใส่สีขาวเสื้อ · เขาสวมหมวก','ฉันใส่เสื้อสีขาว · หมวกเขาสวม'],a:0,e:'Cor no fim da peça, e ordem quem + verbo + objeto nas duas frases.'},
+ ]},
+ {th:'ตอบคำถามต่อไปนี้',pt:'Responda as seguintes perguntas',g:[["ตอบ","responder"],["คำถาม","pergunta"],["ต่อไปนี้","a seguir"]],tip:'Escolha a resposta que combina com a pergunta. Olhe a palavra-pergunta: กี่โมง, กี่, ใคร, อะไร, ไหม.',qs:[
+  {s:'<span class="th">ตามปกติคุณตื่นนอนกี่โมง</span>',o:['ฉันตื่นนอนหกโมงเช้า','ฉันตื่นนอนที่บ้าน','ฉันตื่นนอนกับแม่'],a:0,e:'<span class="th">กี่โมง</span> pede hora → <span class="th">หกโมงเช้า</span> (6h).'},
+  {s:'<span class="th">เมื่อวานนี้คุณไปทำงานไหม</span>',o:['ไม่ไป ฉันไม่ไปทำงาน','ไม่ได้ไป ฉันไม่ได้ไปทำงาน','ไม่ใช่ ฉันไปทำงานพรุ่งนี้'],a:1,e:'<span class="th">เมื่อวานนี้</span> = ontem → passado → <span class="th">ไม่ได้ไป</span> (não fui).'},
+  {s:'<span class="th">คุณมีนิ้วมือกี่นิ้ว</span>',o:['ฉันมีนิ้วมือสองข้าง','ฉันมีนิ้วมือสิบนิ้ว','ฉันมีมือสิบนิ้ว'],a:1,e:'Dedo se conta com <span class="th">นิ้ว</span>: <span class="th">นิ้วมือสิบนิ้ว</span> (dez dedos). <span class="th">ข้าง</span> é para mão, braço, pé, perna.'},
+  {s:'<span class="th">วันนี้คุณใส่เสื้อสีอะไร</span>',o:['วันนี้ฉันใส่เสื้อสีขาว','วันนี้ฉันถอดเสื้อ','วันนี้ฉันใส่เสื้อสองตัว'],a:0,e:'<span class="th">สีอะไร</span> pede a cor → <span class="th">เสื้อสีขาว</span> (blusa branca).'},
+  {s:'<span class="th">มาลีกับแม่ ใครสูงกว่า</span>',o:['สูงมาก','มาลีสูงกว่าแม่','มาลีสูงขึ้น'],a:1,e:'<span class="th">ใคร</span> + <span class="th">กว่า</span> pede um nome + adjetivo + <span class="th">กว่า</span>: <span class="th">มาลีสูงกว่าแม่</span>.'},
+ ]},
+ {th:'เลือกคำแปลที่ถูกต้อง',pt:'Tailandês → português: escolha a tradução correta',g:[["เลือก","escolher"],["คำแปล","tradução"],["ที่","que (é)"],["ถูกต้อง","correta"]],qs:[
+  {s:'<span class="th">ฉันไม่ได้ทำอาหารเย็น</span>',o:['Eu não fiz o jantar','Eu não faço o jantar','Eu já fiz o jantar'],a:0,e:'<span class="th">ไม่ได้</span> + verbo = não fiz (passado).'},
+  {s:'<span class="th">เขาสวมหมวกสีดำ</span>',o:['Ele tirou o chapéu preto','Ele usa um chapéu preto','Ele comprou um chapéu preto'],a:1,e:'<span class="th">สวม</span> = vestir/pôr (chapéu). Tirar seria <span class="th">ถอด</span>.'},
+  {s:'<span class="th">พ่อแก่กว่าแม่ห้าปี</span>',o:['Meu pai é cinco anos mais velho que minha mãe','Minha mãe é cinco anos mais velha que meu pai','Meu pai tem cinco anos'],a:0,e:'Quem vem antes de <span class="th">กว่า</span> tem o “mais”: o pai.'},
+  {s:'<span class="th">ช่วยพูดช้าๆหน่อย</span>',o:['Fale mais alto, por favor','Fale devagar, por favor','Não fale'],a:1,e:'<span class="th">ช้าๆ</span> = devagar; <span class="th">ช่วย…หน่อย</span> = por favor.'},
+  {s:'<span class="th">มีแมวในบ้าน</span>',o:['Eu tenho um gato','Tem um gato na casa','O gato está fora de casa'],a:1,e:'<span class="th">มี</span> abrindo a frase = “tem / há”.'},
+  {s:'<span class="th">ฉันไปตลาดมา</span>',o:['Eu vou ao mercado','Eu fui ao mercado (e voltei)','Eu não fui ao mercado'],a:1,e:'<span class="th">ไป…มา</span> = fui e voltei.'},
+  {s:'<span class="th">บางครั้งเขาอ่านหนังสือ</span>',o:['Ele sempre lê','Ele lê todo dia','Às vezes ele lê'],a:2,e:'<span class="th">บางครั้ง</span> = às vezes · <span class="th">เสมอ</span> = sempre · <span class="th">ทุกวัน</span> = todo dia.'},
+  {s:'<span class="th">ฉันอ่านภาษาไทยเก่งขึ้น</span>',o:['Leio tailandês melhor que antes','Leio tailandês melhor que você','Não leio tailandês'],a:0,e:'<span class="th">ขึ้น</span> = melhor que antes (comparando comigo mesma).'},
+ ]},
+ {th:'เลือกคำแปลที่ถูกต้อง',pt:'Português → tailandês: escolha a tradução correta',g:[["เลือก","escolher"],["คำแปล","tradução"],["ที่","que (é)"],["ถูกต้อง","correta"]],qs:[
+  {s:'Oito e meia da manhã',o:['แปดโมงครึ่ง','แปดทุ่มครึ่ง','บ่ายแปดโมงครึ่ง'],a:0,e:'8h = <span class="th">แปดโมง</span> + <span class="th">ครึ่ง</span> (e meia).'},
+  {s:'Não esqueça!',o:['อย่าลืม','ไม่ลืม','ลืมหน่อย'],a:0,e:'Proibição = <span class="th">อย่า</span> + verbo.'},
+  {s:'Ela tem cabelo longo',o:['เธอมีผมสั้น','เธอมีผมยาว','เธอมีขายาว'],a:1,e:'<span class="th">ผม</span> cabelo + <span class="th">ยาว</span> longo. <span class="th">ขา</span> é perna; <span class="th">สั้น</span> é curto.'},
+  {s:'Eu já tomei banho',o:['ฉันอาบน้ำแล้ว','ฉันจะอาบน้ำ','ฉันไม่ได้อาบน้ำ'],a:0,e:'verbo + <span class="th">แล้ว</span> = já fiz.'},
+  {s:'Você gosta de verde?',o:['คุณชอบสีเขียวไหม','คุณไม่ชอบสีเขียว','คุณชอบสีแดงไหม'],a:0,e:'<span class="th">สีเขียว</span> verde + <span class="th">ไหม</span> no fim = pergunta.'},
+  {s:'Semana passada',o:['อาทิตย์นี้','อาทิตย์ที่แล้ว','วันอาทิตย์'],a:1,e:'<span class="th">ที่แล้ว</span> = que passou. <span class="th">วันอาทิตย์</span> é domingo.'},
+  {s:'Tire o sapato',o:['สวมรองเท้า','ซื้อรองเท้า','ถอดรองเท้า'],a:2,e:'<span class="th">ถอด</span> = tirar.'},
+  {s:'17h (cinco da tarde)',o:['ห้าโมงเย็น','ห้าทุ่ม','ตีห้า'],a:0,e:'16h–18h = nº + <span class="th">โมงเย็น</span>. <span class="th">ห้าทุ่ม</span> é 23h; <span class="th">ตีห้า</span> é 5h.'},
+ ]},
+];
+let st={};try{st=JSON.parse(localStorage.getItem('provaA2')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('provaA2',JSON.stringify(st))}catch(e){}};
+const exam=document.getElementById('exam');let n=0;
+S.forEach((sec,si)=>{
+  const el=document.createElement('section');
+  el.innerHTML=`<div class="sh"><div class="big">${sec.th}</div><div class="gloss">${sec.g.map(([a,b])=>`<span><b>${a}</b>${b}</span>`).join('')}</div><div class="pt">${sec.pt}</div>${sec.tip?`<div class="tip">${sec.tip}</div>`:''}</div>`;
+  sec.qs.forEach((q,qi)=>{n++;const id=`q${si}_${qi}`;const d=document.createElement('div');d.className='q';
+    if(sec.open){
+      d.innerHTML=`<div class="stem"><span class="n">${n}.</span><span class="th" style="font-size:1.2rem">${q.s}</span></div><div class="hint">(${q.t})</div><textarea id="${id}" aria-label="Resposta ${n}"></textarea><div class="expl" hidden><b>Resposta modelo:</b> <span class="th">${q.m}</span><br>${q.mt}</div>`;
+      const ta=d.querySelector('textarea');ta.value=st[id]||'';ta.oninput=()=>{st[id]=ta.value;save()};
+    }else{
+      d.innerHTML=`<div class="stem"><span class="n">${n}.</span>${q.s}</div><div class="opts">${q.o.map((o,oi)=>`<label class="opt"><input type="radio" name="${id}" id="${id}_${oi}" value="${oi}"${st[id]==oi?' checked':''}><span class="l">${'ABC'[oi]}</span>${o}</label>`).join('')}</div><div class="expl" hidden>${q.e}</div>`;
+      d.querySelectorAll('input').forEach(i=>i.onchange=()=>{st[id]=+i.value;save()});
+    }
+    el.appendChild(d);});
+  exam.appendChild(el);
+});
+document.getElementById('check').onclick=()=>{
+  let ok=0,tot=0;
+  S.forEach((sec,si)=>sec.qs.forEach((q,qi)=>{const id=`q${si}_${qi}`;
+    if(sec.open){document.getElementById(id).parentElement.querySelector('.expl').hidden=false;return}
+    tot++;const opts=[...document.querySelectorAll(`input[name="${id}"]`)];
+    opts.forEach((i,oi)=>{const l=i.parentElement;l.classList.remove('right','wrong');if(oi===q.a)l.classList.add('right');else if(i.checked)l.classList.add('wrong')});
+    if(st[id]===q.a)ok++;
+    opts[0].closest('.q').querySelector('.expl').hidden=false;
+  }));
+  const s=document.getElementById('score');s.hidden=false;
+  s.textContent=`Você acertou ${ok} de ${tot}. Releia as explicações das que ficaram em vermelho.`;
+  s.scrollIntoView({behavior:'smooth',block:'center'});
+};
+document.getElementById('reset').onclick=()=>{st={};save();location.reload()};
+</script>
+
+</body></html>

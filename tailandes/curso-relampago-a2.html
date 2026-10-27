@@ -1,0 +1,644 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Curso Relâmpago Tailandês A2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Sarabun:wght@400;600&display=swap">
+<style>
+/* Layout: one narrow column of lesson "cartões", sticky lesson chips on top; Thai always big, PT small underneath */
+:root{
+  --bg:#f6f4fb; --surface:#ffffff; --ink:#1d1a33; --muted:#5f5a78; --line:#e2def0;
+  --indigo:#2f2a7a; --saffron:#e8930c; --saffron-soft:#fdf0d9; --ok:#1d7a4a; --ok-soft:#dff3e7; --bad:#b3322b; --bad-soft:#fbe3e1;
+  --display:"Bricolage Grotesque", system-ui, sans-serif;
+  --body:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Sarabun", sans-serif;
+  --thai:-apple-system, BlinkMacSystemFont, "Thonburi", "Sarabun", "Noto Sans Thai", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#13111f; --surface:#1d1a2e; --ink:#ecebf5; --muted:#a7a2c2; --line:#302c48;
+  --indigo:#a9a3ff; --saffron:#f3a83a; --saffron-soft:#3a2a10; --ok:#5fd394; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1a18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13111f; --surface:#1d1a2e; --ink:#ecebf5; --muted:#a7a2c2; --line:#302c48;
+  --indigo:#a9a3ff; --saffron:#f3a83a; --saffron-soft:#3a2a10; --ok:#5fd394; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1a18; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 60px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:2rem;font-weight:800;color:var(--indigo)}
+h2{font-size:1.45rem;font-weight:800}
+h3{font-size:1.05rem;font-weight:600;margin-top:18px}
+p{margin:8px 0}
+.lede{color:var(--muted);max-width:60ch}
+.th{font-family:var(--thai);font-size:1.35rem;line-height:1.6}
+.pt{display:block;color:var(--muted);font-size:.88rem;line-height:1.3}
+[hidden]{display:none!important}
+#apop{position:absolute;z-index:60;display:flex;flex-wrap:wrap;gap:6px;align-items:center;max-width:calc(100vw - 16px);background:var(--surface);border:1px solid var(--line,#ddd);border-radius:14px;padding:6px 8px;box-shadow:0 6px 20px rgba(0,0,0,.15);font-size:.85rem}
+#apop .pbtn{border:0;background:var(--saffron-soft);color:var(--ink);border-radius:999px;min-width:34px;height:32px;cursor:pointer;font-size:.95rem}
+.eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--saffron);font-weight:700}
+nav.chips{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin-top:14px;border-bottom:1px solid var(--line);scrollbar-width:none}
+nav.chips button{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 .85rem var(--body);cursor:pointer}
+nav.chips button[aria-current="true"]{background:var(--indigo);color:var(--bg);border-color:var(--indigo)}
+nav.chips button .done{color:var(--ok)}
+nav.chips button[aria-current="true"] .done{color:var(--bg)}
+button:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+.plan{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.plan ol{margin:6px 0 0;padding-left:20px}
+.plan li{margin:4px 0}
+.section{margin-top:22px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:12px}
+.formula{font-family:var(--display);font-weight:600;font-size:1.05rem;background:var(--saffron-soft);border-radius:10px;padding:10px 12px;margin:10px 0}
+.trap{border-left:4px solid var(--saffron);background:var(--saffron-soft);border-radius:0 10px 10px 0;padding:10px 12px;margin-top:12px}
+.trap b{color:var(--saffron)}
+.ex{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)}
+.ex:last-child{border-bottom:0}
+.ex>div{min-width:0}
+.say{border:0;background:var(--saffron-soft);color:var(--saffron);border-radius:999px;width:38px;height:38px;font-size:1rem;cursor:pointer;flex:none}
+.grid-words{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:8px}
+.word{background:var(--bg);border-radius:10px;padding:8px 10px;cursor:pointer;border:1px solid var(--line);text-align:left;color:var(--ink);font:inherit}
+.word .th{font-size:1.25rem}
+.word .emo{font-size:1.2rem;margin-right:4px}
+.tablewrap{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td.thc{font-family:var(--thai);font-size:1.15rem;white-space:nowrap}
+.quiz{margin-top:16px;border:2px solid var(--indigo);border-radius:16px;padding:14px 16px;background:var(--surface)}
+.q{padding:12px 0;border-bottom:1px solid var(--line)}
+.q:last-child{border-bottom:0}
+.qnum{font-size:.75rem;color:var(--muted);font-weight:700}
+.opts{display:grid;gap:8px;margin-top:8px}
+.opt{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:10px 12px;text-align:left;font:inherit;cursor:pointer}
+.opt.right{background:var(--ok-soft);border-color:var(--ok)}
+.opt.wrong{background:var(--bad-soft);border-color:var(--bad)}
+.opt:disabled{cursor:default}
+.fb{margin-top:8px;font-size:.92rem;border-radius:10px;padding:8px 10px}
+.fb.ok{background:var(--ok-soft);color:var(--ok)}
+.fb.no{background:var(--bad-soft);color:var(--bad)}
+.tiles,.answer{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;min-height:48px}
+.answer{border:2px dashed var(--line);border-radius:10px;padding:6px}
+.tile{font-family:var(--thai);font-size:1.2rem;border:1px solid var(--indigo);color:var(--indigo);background:var(--surface);border-radius:10px;padding:4px 12px;cursor:pointer}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.btn{border:0;border-radius:10px;padding:10px 16px;font:700 .95rem var(--body);cursor:pointer;background:var(--indigo);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--indigo);border:1px solid var(--indigo)}
+.clock{font-family:var(--display);font-weight:800;font-size:3rem;color:var(--indigo);font-variant-numeric:tabular-nums;text-align:center}
+.score{font-family:var(--display);font-weight:800;font-size:1.3rem}
+.story p{margin:4px 0}
+.day{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--line)}
+.dot{width:18px;height:18px;border-radius:50%;border:1px solid var(--line)}
+.warn{font-size:.85rem;color:var(--muted)}
+.teach{border-left:4px solid var(--indigo);border-radius:0 14px 14px 0}
+.teach p{margin:8px 0}
+.pad{margin-top:8px}
+.padsvg{display:block;width:100%;border:1px solid var(--line);border-radius:10px;touch-action:none;background:var(--bg) repeating-linear-gradient(to bottom,transparent 0,transparent 43px,var(--line) 43px,var(--line) 44px)}
+.inkable{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+body.inking{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.wbw{display:flex;flex-wrap:wrap;gap:4px 6px;margin:4px 0 2px;font-size:.82rem;color:var(--muted)}
+.wbw span{background:var(--saffron-soft);border-radius:6px;padding:1px 7px}
+.wbw .sep{background:none;padding:0}
+.wbw button.wb{font:inherit;color:inherit;border:0;background:var(--saffron-soft);border-radius:6px;padding:1px 7px;cursor:pointer}
+.wbw button.wb:active{filter:brightness(.92)}
+.qhead{display:flex;gap:8px;align-items:flex-start}.qhead .th{flex:1}
+.wbw b.th{font-size:.98rem;font-weight:600;color:var(--ink)}
+.tr{border:0;background:none;color:var(--indigo);font:600 .8rem var(--body);padding:2px 0;cursor:pointer;text-decoration:underline}
+.audiobar{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-top:10px;font-size:.85rem;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{border:0;background:var(--surface);color:var(--ink);font:600 .8rem var(--body);padding:5px 10px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--indigo);color:var(--bg)}
+details.rc{grid-column:1/-1;margin-top:4px}
+details.rc summary{cursor:pointer;color:var(--indigo);font-weight:600;font-size:.85rem}
+.rc textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px;background:var(--bg);color:var(--ink);font:1.15rem var(--thai);margin-top:6px}
+.rc .w-ok{background:var(--ok-soft);color:var(--ok);border-radius:4px}
+.rc .w-no{background:var(--bad-soft);color:var(--bad);border-radius:4px}
+#main{position:relative}
+#ink{position:absolute;left:0;top:0;width:100%;pointer-events:none;z-index:3;overflow:visible}
+#ink.on{pointer-events:auto;touch-action:none;cursor:crosshair}
+.inkbar{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:8;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.inkbar .btn{box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.voice-note{font-size:.85rem;color:var(--muted);margin-top:6px}
+@media (prefers-reduced-motion:no-preference){.opt,.tile,.word{transition:background .15s,border-color .15s}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Prova de 20/10 · aulas 13 a 24</div>
+  <h1>Curso Relâmpago Tailandês A2</h1>
+  <p class="lede">Tudo o que as aulas ensinaram, explicado como a professora explicaria, com o som de cada frase (toque em 🔊) e exercícios que corrigem na hora. Você não precisa assistir às aulas.</p>
+  <p class="voice-note" id="voiceNote"></p>
+  <div class="audiobar"><span>🔊 Velocidade</span><span class="seg" id="segRate" data-k="rate"><button data-v="0.85">Normal</button><button data-v="0.55">Lenta</button><button data-v="0.4">Bem lenta</button></span>
+   <span>Repetir</span><span class="seg" id="segRep" data-k="rep"><button data-v="1">1x</button><button data-v="2">2x</button><button data-v="3">3x</button></span>
+   <span>Toque em 🔊 de novo para ouvir outra vez. Use ✏️ Anotar para escrever com a Apple Pencil por cima das palavras.</span></div>
+
+  <div class="plan">
+    <b>Plano para amanhã (19/10)</b>
+    <ol>
+      <li><b>Manhã:</b> Aula 21 (montar frases) e Aula 23 (passado). É o que mais cai em "ordenar a frase" e nas perguntas orais.</li>
+      <li><b>Tarde:</b> Aula 17 (horas, rotina e revisão) e Aula 19 (roupas e cores).</li>
+      <li><b>Noite:</b> Aulas 15 e 13, dias da semana, a <b>Interpretação de texto</b>, a <b>Leitura em voz alta</b> e a <b>Prova rápida</b> no fim desta página. Repita até acertar 80%.</li>
+      <li><b>Dia 20, antes da prova:</b> leia só os quadros amarelos de pegadinhas e as perguntas orais.</li>
+    </ol>
+  </div>
+
+  <nav class="chips" id="chips" aria-label="Aulas"></nav>
+  <main id="main"></main>
+  <div class="inkbar" id="inkbar"><button class="btn ghost" id="inkUndo" hidden>Desfazer</button><button class="btn ghost" id="inkClear" hidden>Apagar</button><button class="btn" id="inkToggle">✏️ Anotar</button></div>
+</div>
+
+<script>
+const L = [
+{
+ id:"a21", chip:"Aula 21 · Frases", title:"Aula 21 e 22: montar a frase no presente", tag:"Unidade 4 · Lições 3 e 4 · a mais importante",
+ html:`
+ <div class="box teach"><div class="eyebrow">Explicação da aula</div><p>Pense no tailandês como peças de Lego que nunca mudam de forma. Em português o verbo muda: eu como, você come, nós comemos, eles comeram. Em tailandês, <span class="th">กิน</span> é sempre <span class="th">กิน</span>. Quem diz <b>quem</b> fez é o sujeito, e quem diz <b>quando</b> é a palavra de tempo.</p><p>Por isso a aula inteira se resume a uma fila de peças: primeiro QUEM (<span class="th">ฉัน</span> eu, <span class="th">คุณ</span> você, <span class="th">เขา</span> ele/ela, <span class="th">เรา</span> nós, <span class="th">พวกเขา</span> eles), depois a AÇÃO (o verbo), depois O QUÊ (o objeto) e por último QUANDO. <span class="th">ฉัน + ดื่ม + กาแฟ + ทุกวัน</span> = eu bebo café todo dia. É a mesma ordem do português, só que o "quando" prefere ficar no fim.</p><p>Para negar, nada muda de lugar: você só encaixa <span class="th">ไม่</span> logo antes do verbo, como o nosso "não" (<span class="th">ฉันไม่ดื่ม</span> = eu não bebo). Para perguntar, também não se inverte nada: <span class="th">ไหม</span> vai no fim, como um ponto de interrogação falado (<span class="th">คุณดื่มกาแฟไหม</span> = você bebe café?). Para responder "sim", repita o verbo (<span class="th">ดื่ม</span>); para "não", <span class="th">ไม่ดื่ม</span>.</p><p>Na hora de ordenar a frase, pergunte-se: quem? faz o quê? o quê? quando? e coloque as peças nessa ordem. Se sobrar <span class="th">ไหม</span>, ele vai no fim. Se sobrar <span class="th">ไม่</span>, vai antes do verbo. E <span class="th">ที่</span> (em) vem sempre colado antes do lugar: <span class="th">ทำงานที่โรงเรียน</span>.</p></div>
+ <p>O tailandês <b>não conjuga verbo</b>. "Eu como", "ele come", "nós comemos": é sempre o mesmo verbo, <span class="th">กิน</span>. O que muda é só a ordem das palavras, e ela é quase igual ao português.</p>
+ <div class="formula">Sujeito + verbo + objeto + quando</div>
+ <p>O "quando" (todo dia, sempre, agora) vai <b>no fim</b>. A única exceção comum é <span class="th">บางครั้ง</span> (às vezes), que também pode abrir a frase.</p>
+ <h3>Os verbos da aula</h3>
+ <div class="grid-words">${words([["คิด","pensar","💭"],["พูด","falar","🗣️"],["เรียน","estudar","📚"],["เขียน","escrever","✍️"],["รู้","saber","💡"],["สอน","ensinar","👩‍🏫"],["ดื่ม","beber","🥤"],["ว่ายน้ำ","nadar","🏊"],["วิ่ง","correr","🏃"],["นั่ง","sentar","🪑"],["เต้น","dançar","💃"],["กิน","comer","🍚"],["ดู","ver/assistir","📺"],["อ่าน","ler","📖"],["ไป","ir","➡️"],["ชอบ","gostar","❤️"],["ทำงาน","trabalhar","💼"],["เล่น","jogar/brincar","⚽"],["ตื่น","acordar","⏰"],["นอน","dormir","😴"]])}</div>
+ <h3>Quando: advérbios de tempo (vão no fim)</h3>
+ <div class="grid-words">${words([["ทุกวัน","todo dia","📅"],["ทุกเช้า","toda manhã","🌅"],["บางครั้ง","às vezes","🎲"],["บ่อย","frequentemente","🔁"],["เสมอ","sempre","♾️"],["ตอนนี้","agora","👉"]])}</div>
+ <h3>Exemplos do material</h3>
+ ${ex([["ฉันเรียนภาษาไทย","Eu estudo tailandês."],["ฉันดื่มกาแฟทุกวัน","Eu bebo café todo dia."],["ฉันไปยิมทุกเช้า","Eu vou à academia toda manhã."],["เขาเรียนภาษาไทยทุกวัน","Ele estuda tailandês todo dia."],["ฉันนอนดึกเสมอ","Eu sempre durmo tarde."],["เขาทำอาหารตอนนี้","Ele está cozinhando agora."],["บางครั้งฉันดูหนังไทย","Às vezes eu assisto filme tailandês."],["พวกเขาว่ายน้ำทุกเช้า","Eles nadam toda manhã."],["เธอไม่เต้นบ่อย","Ela não dança com frequência."],["คุณพูดภาษาอังกฤษได้ไหม","Você sabe falar inglês?"]])}
+ <h3>Negativa e pergunta</h3>
+ <div class="formula">ไม่ antes do verbo = não &nbsp;·&nbsp; ไหม no fim = pergunta</div>
+ <div class="tablewrap"><table><tr><th>Afirmativa</th><th>Negativa</th><th>Pergunta</th></tr>
+ <tr><td class="thc">คุณไป</td><td class="thc">คุณไม่ไป</td><td class="thc">คุณไปไหม</td></tr>
+ <tr><td class="thc">เรากิน</td><td class="thc">เราไม่กิน</td><td class="thc">เรากินไหม</td></tr>
+ <tr><td class="thc">เธอดื่ม</td><td class="thc">เธอไม่ดื่ม</td><td class="thc">เธอดื่มไหม</td></tr>
+ <tr><td class="thc">คุณชอบ</td><td class="thc">คุณไม่ชอบ</td><td class="thc">คุณชอบไหม</td></tr></table></div>
+ <p class="pt">vai / não vai / vai? · come · bebe · gosta</p>
+ <div class="trap"><b>Pegadinha:</b> no exercício "achar o erro" eles trocam o verbo ou bagunçam a ordem. <span class="th">คุณดื่มข้าว</span> está errado porque arroz se <i>come</i>: o certo é <span class="th">คุณกินข้าว</span>. E <span class="th">คุณตอนเช้ากาแฟดื่ม</span> vira <span class="th">คุณดื่มกาแฟตอนเช้า</span>.</div>`,
+ quiz:[
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: ผลไม้ / ฉัน / ทุกวัน / กิน",pt:"Eu como fruta todo dia.",tiles:["ผลไม้","ฉัน","ทุกวัน","กิน"],a:["ฉันกินผลไม้ทุกวัน"]},
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: บางครั้ง / หนังสือ / เขา / อ่าน",pt:"Às vezes ele lê livro.",tiles:["บางครั้ง","หนังสือ","เขา","อ่าน"],a:["บางครั้งเขาอ่านหนังสือ","เขาอ่านหนังสือบางครั้ง"]},
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: เช้า / เสมอ / ฉัน / ตื่น",pt:"Eu sempre acordo cedo.",tiles:["เช้า","เสมอ","ฉัน","ตื่น"],a:["ฉันตื่นเช้าเสมอ"]},
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: โรงเรียน / ทำงาน / เขา / ที่",pt:"Ele trabalha na escola.",tiles:["โรงเรียน","ทำงาน","เขา","ที่"],a:["เขาทำงานที่โรงเรียน"]},
+  {t:"mc",q:"เปลี่ยนเป็นประโยคปฏิเสธ: พ่อดื่มกาแฟตอนเช้า",pt:"O pai bebe café de manhã.",o:["พ่อดื่มไม่กาแฟตอนเช้า","พ่อไม่ดื่มกาแฟตอนเช้า","ไม่พ่อดื่มกาแฟตอนเช้า","พ่อดื่มกาแฟตอนเช้าไม่"],a:1,why:"ไม่ fica logo antes do verbo ดื่ม."},
+  {t:"mc",q:"เปลี่ยนเป็นประโยคคำถาม: เขาทำงานที่โรงพยาบาล",pt:"Ele trabalha no hospital.",o:["ไหมเขาทำงานที่โรงพยาบาล","เขาไหมทำงานที่โรงพยาบาล","เขาทำงานที่โรงพยาบาลไหม","เขาทำงานไหมที่โรงพยาบาล"],a:2,why:"ไหม vai sempre no fim da frase."},
+  {t:"mc",q:"ประโยคไหนถูกต้อง",pt:"Qual frase está certa? (achar o erro)",o:["เล่นพวกเขาทุกเย็นฟุตบอล","พวกเขาเล่นฟุตบอลทุกเย็น","พวกเขาทุกเย็นเล่นฟุตบอล","ฟุตบอลพวกเขาเล่นทุกเย็น"],a:1,why:"Sujeito (พวกเขา) + verbo (เล่น) + objeto (ฟุตบอล) + quando (ทุกเย็น). Eles jogam futebol toda tarde."},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง: ภาษาจีน / ครู / สอน / ไหม",pt:"A professora ensina chinês?",tiles:["ภาษาจีน","ครู","สอน","ไหม"],a:["ครูสอนภาษาจีนไหม"]},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง: ตอนนี้ / กาแฟ / ไม่ / ฉัน / ดื่ม",pt:"Eu não bebo café agora.",tiles:["ตอนนี้","กาแฟ","ไม่","ฉัน","ดื่ม"],a:["ฉันไม่ดื่มกาแฟตอนนี้","ตอนนี้ฉันไม่ดื่มกาแฟ"]},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง: เพลง / ฟัง / พี่สาว / ทุกเย็น",pt:"Minha irmã mais velha ouve música toda noite.",tiles:["เพลง","ฟัง","พี่สาว","ทุกเย็น"],a:["พี่สาวฟังเพลงทุกเย็น"]},
+  {t:"mc",q:"ประโยคใหม่ · เลือกคำแปลที่ถูกต้อง: \"Você dança todo dia?\"",pt:"Escolha a tradução certa.",o:["คุณเต้นทุกวันไหม","คุณไหมเต้นทุกวัน","ทุกวันคุณไหมเต้น","คุณไม่เต้นทุกวัน"],a:0,why:"Sujeito + verbo + quando + ไหม no fim."},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง",pt:"Eu sempre leio livro à noite.",tiles:["อ่าน","เสมอ","ฉัน","ตอนเย็น","หนังสือ"],a:["ฉันอ่านหนังสือตอนเย็นเสมอ"]},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง",pt:"Meu irmão mais velho não corre.",tiles:["วิ่ง","พี่ชาย","ไม่","ของฉัน"],a:["พี่ชายของฉันไม่วิ่ง"]}
+ ]
+},
+{
+ id:"a23", chip:"Aula 23 · Passado", title:"Aula 23 e 24: falar do passado", tag:"Unidade 4 · Lição 5 · a segunda mais importante",
+ html:`
+ <div class="box teach"><div class="eyebrow">Explicação da aula</div><p>Se o verbo não muda, o passado precisa vir de outra peça. A aula 23 ensina duas famílias de peças.</p><p>A primeira é a <b>palavra de tempo</b>, igual ao nosso "ontem". Ela costuma abrir a frase, e o resto é a frase normal da aula 21: <span class="th">เมื่อวานนี้ + ฉันกินส้มตำ</span>. Pense em <span class="th">ที่แล้ว</span> como "que passou": <span class="th">อาทิตย์ที่แล้ว</span> = a semana que passou. Só a palavra de tempo já basta para a frase estar no passado.</p><p>A segunda família são as <b>partículas</b>. <span class="th">แล้ว</span> depois do verbo é o nosso "já": <span class="th">กินแล้ว</span> = já comi. <span class="th">ได้</span> antes do verbo diz que a ação aconteceu de fato (<span class="th">ฉันได้ไปเชียงใหม่</span> = eu fui a Chiang Mai) e pode vir junto com <span class="th">แล้ว</span>. <span class="th">มา</span> no fim da frase dá a ideia de "fui e já voltei": <span class="th">ไปหาหมอมา</span> = fui ao médico.</p><p>A negativa do passado é a pegadinha mais importante: não basta <span class="th">ไม่</span>, você precisa de <span class="th">ไม่ได้</span> antes do verbo. <span class="th">ไม่ไป</span> = não vou; <span class="th">ไม่ได้ไป</span> = não fui. E não use <span class="th">แล้ว</span> para negar, porque <span class="th">ไม่…แล้ว</span> quer dizer "não … mais".</p><p>Na prova oral, quando a pergunta começa com uma palavra de passado (<span class="th">เมื่อวานนี้คุณทำอะไร</span>), comece a resposta com a mesma palavra: <span class="th">เมื่อวานนี้ฉัน…</span>. É o jeito mais seguro de acertar o tempo.</p></div>
+ <p>Se o verbo não muda, como dizer "eu fui"? Com <b>uma palavrinha de tempo</b> ou com <b>uma partícula</b>. A frase base continua igual à da Aula 21.</p>
+ <h3>1. Palavra de tempo no começo da frase</h3>
+ <div class="grid-words">${words([["เมื่อวานนี้","ontem","⬅️"],["เมื่อกี้","agorinha","⏱️"],["เมื่อก่อน","antigamente","🕰️"],["อาทิตย์ที่แล้ว","semana passada","📆"],["เดือนที่แล้ว","mês passado","🗓️"],["ปีที่แล้ว","ano passado","🎆"],["ในอดีต","no passado","📜"]])}</div>
+ <p>Dica associativa: <span class="th">ที่แล้ว</span> = "que passou". Semana/mês/ano + <span class="th">ที่แล้ว</span>.</p>
+ ${ex([["เมื่อวานนี้ฉันกินส้มตำ","Ontem eu comi som tam."],["เมื่อก่อนฉันอยู่กรุงเทพฯ","Antigamente eu morava em Bangkok."],["เมื่อกี้ฝนตกหนักมาก","Agorinha choveu muito forte."],["ปีที่แล้วฉันไปประเทศไทย","Ano passado eu fui à Tailândia."]])}
+ <h3>2. As quatro partículas de passado</h3>
+ <div class="tablewrap"><table><tr><th>Partícula</th><th>Onde</th><th>Exemplo</th></tr>
+ <tr><td class="thc">แล้ว</td><td>depois do verbo (já, concluído)</td><td class="thc">เบียกินแล้ว<span class="pt">Bia já comeu.</span></td></tr>
+ <tr><td class="thc">ได้</td><td>antes do verbo</td><td class="thc">เราได้ถ่ายรูปด้วยกัน<span class="pt">Tiramos foto juntos.</span></td></tr>
+ <tr><td class="thc">ได้ … แล้ว</td><td>as duas juntas</td><td class="thc">ฉันได้พูดกับเขาแล้ว<span class="pt">Eu já falei com ele.</span></td></tr>
+ <tr><td class="thc">มา</td><td>no fim da frase (fui e voltei)</td><td class="thc">ฉันไปภูเก็ตมา<span class="pt">Eu fui a Phuket (e voltei).</span></td></tr></table></div>
+ ${ex([["ลลิษาทำการบ้านแล้ว","Lalisa já fez o dever de casa."],["ฉันได้พบเขาครั้งแรกเมื่อปีที่แล้ว","Eu o conheci pela primeira vez ano passado."],["แม่ไปซื้อทีวีมา","A mãe foi comprar uma TV."],["เมื่อกี้เขาโทรมา","Ele ligou agorinha."]])}
+ <h3>3. Negativa no passado</h3>
+ <div class="formula">ไม่ได้ + verbo = não (fiz)</div>
+ ${ex([["ฉันไม่ได้ไปทำงาน","Eu não fui trabalhar."],["เขาไม่ได้พูดกับฉัน","Ele não falou comigo."]])}
+ <div class="trap"><b>Pegadinha:</b> <span class="th">ฉันไม่ไป</span> = eu <b>não vou</b>. <span class="th">ฉันไม่ได้ไป</span> = eu <b>não fui</b>. Um <span class="th">ได้</span> muda tudo.</div>
+ <h3>Texto de leitura da aula: a história da นกน้อย</h3>
+ <div class="box story">
+  ${ex([["เมื่อวานนี้ ฝนตกหนักมาก","Ontem choveu muito forte."],["นกน้อยได้ตื่นนอนแต่เช้า","Noknoi acordou cedo."],["เขาดื่มกาแฟและกินขนมปังเป็นอาหารเช้า","Tomou café e comeu pão no café da manhã."],["ตอนสายนกน้อยได้ไปตลาด เขาซื้อผลไม้และปลาสด","No meio da manhã foi ao mercado e comprou frutas e peixe fresco."],["แต่ตอนที่กำลังจะกลับบ้าน เธอได้เจอเพื่อนเก่าคนหนึ่ง","Mas quando ia voltar para casa, encontrou uma amiga antiga."],["พวกเขาคุยกันเรื่องอดีต","Conversaram sobre o passado."],["พอถึงตอนเย็น นกน้อยกลับบ้านแล้ว","No fim da tarde, Noknoi voltou para casa."],["เขาทำอาหารเย็นและดูทีวีจนหลับไป","Fez o jantar e viu TV até dormir."],["เมื่อวานนี้เป็นวันที่ดีมากจริงๆ","Ontem foi um dia muito bom mesmo."]])}
+ </div>`,
+ quiz:[
+  {t:"mc",q:"ฉันไม่ได้ไปโรงเรียน แปลว่าอะไร",pt:"O que quer dizer ฉันไม่ได้ไปโรงเรียน?",o:["Eu não vou à escola.","Eu não fui à escola.","Eu fui à escola.","Eu não posso ir à escola."],a:1,why:"ไม่ได้ + verbo é negativa no passado."},
+  {t:"mc",q:"เปลี่ยนเป็นอดีตกาล: วันนี้ฉันไปตลาด",pt:"Hoje eu vou ao mercado.",o:["เมื่อวานนี้ฉันไปตลาด","พรุ่งนี้ฉันไปตลาด","วันนี้ฉันไม่ไปตลาด","ฉันไปตลาดไหม"],a:0,why:"Troque วันนี้ (hoje) por เมื่อวานนี้ (ontem)."},
+  {t:"mc",q:"ประโยคไหนถูกต้อง: อริสา + อาบน้ำ + แล้ว",pt:"Onde fica แล้ว em \"Ela (Arisa) já tomou banho\"?",o:["แล้วอริสาอาบน้ำ","อริสาแล้วอาบน้ำ","อริสาอาบน้ำแล้ว","อริสาได้แล้วอาบน้ำ"],a:2,why:"แล้ว vem depois do verbo: อริสาอาบน้ำแล้ว."},
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: ส้มตำ / เมื่อวานนี้ / กิน / ฉัน",pt:"Ontem eu comi som tam.",tiles:["ส้มตำ","เมื่อวานนี้","กิน","ฉัน"],a:["เมื่อวานนี้ฉันกินส้มตำ","ฉันกินส้มตำเมื่อวานนี้"]},
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: มา / ฉัน / ภูเก็ต / ไป",pt:"Eu fui a Phuket.",tiles:["มา","ฉัน","ภูเก็ต","ไป"],a:["ฉันไปภูเก็ตมา"]},
+  {t:"mc",q:"นกน้อยซื้ออะไรที่ตลาด",pt:"No texto, o que Noknoi comprou no mercado?",o:["ขนมปังและกาแฟ","ผลไม้และปลาสด","ทีวี","อาหารเย็น"],a:1,why:"เขาซื้อผลไม้และปลาสด: frutas e peixe fresco."},
+  {t:"mc",q:"นกน้อยได้เจอใคร",pt:"No texto, quem ela encontrou?",o:["แม่","เพื่อนเก่าคนหนึ่ง","หมอ","ครู"],a:1,why:"เธอได้เจอเพื่อนเก่าคนหนึ่ง: uma amiga antiga."},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง: มา / ตลาด / เมื่อวานนี้ / แม่ / ไป",pt:"Ontem a mãe foi ao mercado.",tiles:["มา","ตลาด","เมื่อวานนี้","แม่","ไป"],a:["เมื่อวานนี้แม่ไปตลาดมา","แม่ไปตลาดมาเมื่อวานนี้"]},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง: แล้ว / ฉัน / การบ้าน / ทำ",pt:"Eu já fiz o dever de casa.",tiles:["แล้ว","ฉัน","การบ้าน","ทำ"],a:["ฉันทำการบ้านแล้ว"]},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง: กินข้าว / ไม่ได้ / เขา / เมื่อวานนี้",pt:"Ontem ele não comeu.",tiles:["กินข้าว","ไม่ได้","เขา","เมื่อวานนี้"],a:["เมื่อวานนี้เขาไม่ได้กินข้าว","เขาไม่ได้กินข้าวเมื่อวานนี้"]},
+  {t:"mc",q:"ประโยคใหม่ · เลือกคำแปลที่ถูกต้อง: \"Semana passada eu não fui trabalhar.\"",pt:"Escolha a tradução certa.",o:["อาทิตย์ที่แล้วฉันไม่ไปทำงาน","อาทิตย์ที่แล้วฉันไม่ได้ไปทำงาน","อาทิตย์ที่แล้วฉันไปทำงานแล้ว","ฉันไม่ได้อาทิตย์ที่แล้วไปทำงาน"],a:1,why:"Passado negativo = ไม่ได้ + verbo."},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง",pt:"Mês passado a mãe comprou um relógio.",tiles:["นาฬิกา","แม่","เดือนที่แล้ว","ซื้อ"],a:["เดือนที่แล้วแม่ซื้อนาฬิกา","แม่ซื้อนาฬิกาเดือนที่แล้ว"]},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง",pt:"Ontem eu usei um vestido vermelho.",tiles:["สีแดง","ใส่","เมื่อวานนี้","ชุดกระโปรง","ฉัน"],a:["เมื่อวานนี้ฉันใส่ชุดกระโปรงสีแดง","ฉันใส่ชุดกระโปรงสีแดงเมื่อวานนี้"]}
+ ]
+},
+{
+ id:"a17h", chip:"Aula 17 · Horas", title:"Aula 17: que horas são?", tag:"Unidade 3 · Lição 5",
+ html:`
+ <div class="box teach"><div class="eyebrow">Explicação da aula</div><p>O relógio tailandês conta o dia pelo sol, em blocos, e cada bloco tem a sua palavra. Os nomes vêm de um costume antigo de marcar as horas com instrumentos.</p><p>De madrugada (1h às 5h) usa-se <span class="th">ตี</span>, "bater" (o gongo): <span class="th">ตีหนึ่ง</span>, <span class="th">ตีสอง</span>. De manhã (6h às 11h) usa-se <span class="th">โมง</span>, o som do gongo, com <span class="th">เช้า</span> (manhã) no fim: <span class="th">เจ็ดโมงเช้า</span>. O meio-dia tem nome próprio: <span class="th">เที่ยง</span>.</p><p>À tarde, <span class="th">บ่าย</span> (tarde) vai na frente: <span class="th">บ่ายโมง</span> (13h), <span class="th">บ่ายสองโมง</span> (14h), <span class="th">บ่ายสามโมง</span> (15h). No fim da tarde volta o <span class="th">โมง</span>, agora com <span class="th">เย็น</span>: <span class="th">สี่โมงเย็น</span> (16h), <span class="th">ห้าโมงเย็น</span> (17h), <span class="th">หกโมงเย็น</span> (18h). Repare que 16h é "4 horas", como a gente fala no dia a dia, e não "dezesseis".</p><p>À noite usa-se <span class="th">ทุ่ม</span>, o som do tambor, e a contagem recomeça do 1: <span class="th">หนึ่งทุ่ม</span> (19h), <span class="th">สองทุ่ม</span> (20h), até <span class="th">ห้าทุ่ม</span> (23h). Meia-noite é <span class="th">เที่ยงคืน</span>, o "meio-dia da noite".</p><p>Minutos: diga a hora e depois o número + <span class="th">นาที</span>. Meia hora é <span class="th">ครึ่ง</span>. Com minutos, <span class="th">เช้า</span> e <span class="th">เย็น</span> costumam sair: <span class="th">หกโมงสิบห้านาที</span>. Para perguntar a hora de alguma coisa, <span class="th">กี่โมง</span> vai no fim: <span class="th">คุณตื่นนอนกี่โมง</span>.</p></div>
+ <p>O relógio tailandês divide o dia em <b>pedaços</b>, e cada pedaço tem sua palavra. Pense num dia de sol: madrugada, manhã, meio-dia, tarde, fim de tarde, noite.</p>
+ <div class="tablewrap"><table><tr><th>Horário</th><th>Como se diz</th><th>Exemplo</th></tr>
+ <tr><td>🌙 1h a 5h</td><td><span class="th">ตี</span> + número</td><td class="thc">ตีสาม<span class="pt">3h</span></td></tr>
+ <tr><td>🌅 6h a 11h</td><td>número + <span class="th">โมงเช้า</span></td><td class="thc">เก้าโมงเช้า<span class="pt">9h</span></td></tr>
+ <tr><td>☀️ 12h</td><td><span class="th">เที่ยง</span> / <span class="th">เที่ยงวัน</span></td><td class="thc">เที่ยงครึ่ง<span class="pt">12h30</span></td></tr>
+ <tr><td>🌤️ 13h</td><td><span class="th">บ่ายโมง</span></td><td class="thc">บ่ายโมงครึ่ง<span class="pt">13h30</span></td></tr>
+ <tr><td>🌤️ 14h e 15h</td><td><span class="th">บ่าย</span> + número + <span class="th">โมง</span></td><td class="thc">บ่ายสองโมง<span class="pt">14h</span></td></tr>
+ <tr><td>🌇 16h a 18h</td><td>número + <span class="th">โมงเย็น</span></td><td class="thc">สี่โมงเย็น<span class="pt">16h</span></td></tr>
+ <tr><td>🌃 19h a 23h</td><td>número (recomeça do 1) + <span class="th">ทุ่ม</span></td><td class="thc">สองทุ่ม<span class="pt">20h</span></td></tr>
+ <tr><td>🌑 0h</td><td><span class="th">เที่ยงคืน</span></td><td class="thc">เที่ยงคืน<span class="pt">meia-noite</span></td></tr></table></div>
+ <div class="trap"><b>Três regras que a prova cobra:</b><br>
+ 1. <span class="th">ครึ่ง</span> = e meia: <span class="th">สิบโมงครึ่ง</span> = 10h30.<br>
+ 2. Com minutos, <span class="th">เช้า</span>/<span class="th">เย็น</span> caem: 6h15 = <span class="th">หกโมงสิบห้านาที</span>.<br>
+ 3. <span class="th">อีก</span> = "faltam": <span class="th">อีกสิบนาทีตีสี่</span> = faltam 10 para as 4 = 3h50.<br>
+ Para 19h a 23h, faça hora − 18: 21h → 3 → <span class="th">สามทุ่ม</span>.</div>
+ <h3>Treino de horas (infinito)</h3>
+ <div class="box" id="clockTrainer"></div>
+ <h3>Rotina (o vocabulário das perguntas orais)</h3>
+ <div class="grid-words">${words([["ตื่นนอน","acordar","⏰"],["อาบน้ำ","tomar banho","🚿"],["แปรงฟัน","escovar os dentes","🪥"],["แต่งตัว","se vestir","👗"],["กินอาหารเช้า","tomar café","🥐"],["ไปทำงาน","ir trabalhar","💼"],["กินข้าวกลางวัน","almoçar","🍱"],["ทำอาหาร","cozinhar","🍳"],["ล้างจาน","lavar a louça","🍽️"],["กินอาหารเย็น","jantar","🍲"],["ดูโทรทัศน์","ver TV","📺"],["ฟังเพลง","ouvir música","🎧"],["อ่านหนังสือ","ler","📖"],["ซักผ้า","lavar roupa","🧺"],["ทำความสะอาด","limpar","🧽"],["นอน","dormir","😴"]])}</div>
+ <h3>A entrevista da aula (วีณา pergunta, สันติ responde)</h3>
+ ${ex([["ตามปกติคุณตื่นนอนกี่โมง","Normalmente você acorda que horas?"],["ราวๆ หกโมงเช้าครับ","Por volta das 6h."],["หลังจากนั้นคุณทำอะไร","Depois disso, o que você faz?"],["คุณเริ่มทำงานกี่โมง","Você começa a trabalhar que horas?"],["ผมทำงานจนหกโมงเย็น","Eu trabalho até as 18h."],["พักทานอาหารกลางวันตอนเที่ยงครึ่ง","Paro para almoçar ao meio-dia e meia."],["ตอนเย็นคุณทำอะไร","À noite, o que você faz?"]])}
+ <p><span class="th">ราวๆ</span> = "mais ou menos". Use em qualquer resposta de horário na prova oral.</p>`,
+ quiz:[
+  {t:"mc",q:"บ่ายสามโมง คือกี่โมง",pt:"บ่ายสามโมง é que horas?",o:["3h","15h","9h","21h"],a:1,why:"บ่าย = tarde. บ่ายสามโมง = 15h."},
+  {t:"mc",q:"สามทุ่ม คือกี่โมง",pt:"สามทุ่ม é que horas?",o:["3h","15h","21h","23h"],a:2,why:"ทุ่ม recomeça às 19h: 1=19h, 2=20h, 3=21h."},
+  {t:"mc",q:"10:30 พูดว่าอย่างไร",pt:"Como se diz 10h30?",o:["สิบโมงครึ่ง","ตีสิบครึ่ง","สิบทุ่มครึ่ง","บ่ายสิบโมง"],a:0,why:"Manhã usa โมง, e ครึ่ง = meia."},
+  {t:"mc",q:"อีกสิบนาทีตีสี่ คือกี่โมง",pt:"อีกสิบนาทีตีสี่ é que horas?",o:["4h10","3h50","16h10","14h"],a:1,why:"อีก = faltam. Faltam 10 para as 4 = 3h50."},
+  {t:"mc",q:"ตามปกติคุณตื่นนอนกี่โมง · เลือกคำตอบที่ดีที่สุด",pt:"Normalmente você acorda que horas? Escolha a melhor resposta.",o:["ฉันตื่นนอนตอนหกโมงเช้า","ฉันชอบสีแดง","ฉันมีมือสองข้าง","ฉันไปภูเก็ตมา"],a:0,why:"A pergunta é a que horas você acorda."}
+ ]
+},
+{
+ id:"a17r", chip:"Revisão U3", title:"Aula 17: revisão da Unidade 3 e o padrão ใช่ไหม", tag:"Teste de 10 questões da aula",
+ html:`
+ <div class="box teach"><div class="eyebrow">Explicação da aula</div><p>A revisão junta tudo das aulas 13, 15 e 17 e acrescenta um jeito de confirmar uma informação: <span class="th">ใช่ไหม</span> no fim da frase, como o nosso "né?". <span class="th">คุณมีผมยาวใช่ไหม</span> = você tem cabelo comprido, né?</p><p>A resposta tem duas partes: primeiro sim ou não, depois a frase inteira. Sim = <span class="th">ใช่</span> + a frase. Não = <span class="th">ไม่ใช่</span> + a frase corrigida. A professora quer ouvir a correção: <span class="th">ไม่ใช่ ฉันมีผมสั้น</span>.</p><p>Diferença: <span class="th">ไหม</span> pergunta de verdade (você bebe café?), <span class="th">ใช่ไหม</span> confirma o que você já acha (você bebe café, né?).</p></div>
+ <p>O teste da aula termina com perguntas de sim/não com <span class="th">ใช่ไหม</span> ("não é?"). É o formato mais provável da prova oral.</p>
+ <div class="formula">Pergunta + ใช่ไหม → ใช่ (sim) + frase &nbsp;/&nbsp; ไม่ใช่ (não) + frase corrigida</div>
+ ${ex([["คุณมีผมยาวใช่ไหม","Você tem cabelo comprido, não é?"],["ใช่ ฉันมีผมยาว","Sim, eu tenho cabelo comprido."],["ไม่ใช่ ฉันมีผมสั้น","Não, eu tenho cabelo curto."],["คุณสูงใช่ไหม","Você é alta, não é?"],["คุณชอบสีเขียวใช่ไหม","Você gosta de verde, não é?"]])}
+ <h3>Verbos de movimento do teste</h3>
+ <div class="grid-words">${words([["แตะ","tocar","☝️"],["กระทืบเท้า","bater o pé","🦶"],["ปรบมือ","bater palma","👏"],["พยักหน้า","acenar com a cabeça","🙂"]])}</div>
+ <h3>Música da aula</h3>
+ ${ex([["เราแตกต่างกัน แต่เราก็เป็นเพื่อนกัน","Somos diferentes, mas somos amigos."]])}`,
+ quiz:[
+  {t:"mc",q:"คุณมีตาโตใช่ไหม · (ตาของคุณเล็ก) ตอบคำถาม",pt:"Você tem olhos grandes, né? (Seus olhos são pequenos.) Responda.",o:["ใช่ ฉันมีตาโต","ไม่ใช่ ฉันมีตาเล็ก","ไม่ใช่ ฉันมีตาโต","ใช่ ฉันไม่มีตา"],a:1,why:"Não → ไม่ใช่, depois a frase corrigida com ตาเล็ก."},
+  {t:"mc",q:"ปรบมือ แปลว่าอะไร",pt:"O que é ปรบมือ?",o:["bater o pé","bater palma","acenar","tocar"],a:1,why:"มือ = mão. ปรบมือ = bater palma."}
+ ]
+},
+{
+ id:"a19", chip:"Aula 19 · Roupas", title:"Aula 19: roupas, cores e vestir", tag:"Unidade 4 · Lições 1 e 2",
+ html:`
+ <div class="box teach"><div class="eyebrow">Explicação da aula</div><p>Roupas são vocabulário, mas a aula tem duas regras de gramática.</p><p><b>A cor vem depois da coisa</b>, como em português (camiseta branca), e leva <span class="th">สี</span> na frente: <span class="th">เสื้อยืดสีขาว</span>. Com <span class="th">สี</span> a palavra vira o nome da cor; na prova, use sempre.</p><p><b>O verbo de vestir.</b> <span class="th">ใส่</span> é o coringa: serve para roupa, sapato, relógio e até para "colocar dentro" (<span class="th">ใส่น้ำตาล</span> = pôr açúcar). <span class="th">สวม</span> é mais formal, com a ideia de cobrir o corpo, e aparece muito em avisos: <span class="th">กรุณาสวมหน้ากาก</span>. <span class="th">ถอด</span> é o contrário dos dois: tirar.</p><p>Para perguntar a cor: <span class="th">…สีอะไร</span> ou <span class="th">…มีสีอะไร</span>. Para dizer a preferida: <span class="th">สีที่ฉันชอบมากที่สุดคือ…</span> (a cor de que eu mais gosto é…).</p></div>
+ <div class="grid-words">${words([["เสื้อยืด","camiseta","👕"],["เสื้อ","blusa/camisa","👚"],["กระโปรง","saia","🩳"],["ชุดกระโปรง","vestido","👗"],["กางเกง","calça","👖"],["กางเกงขายาว","calça comprida","👖"],["หมวก","chapéu/boné","🧢"],["รองเท้า","sapato","👟"],["ถุงเท้า","meia","🧦"],["นาฬิกา","relógio","⌚"],["หน้ากาก","máscara","😷"],["แหวน","anel","💍"]])}</div>
+ <h3>Vestir e tirar</h3>
+ <div class="tablewrap"><table><tr><th>Verbo</th><th>Uso</th><th>Exemplo</th></tr>
+ <tr><td class="thc">ใส่</td><td>vestir/usar (genérico, serve para quase tudo)</td><td class="thc">ฉันใส่ชุดกระโปรง<span class="pt">Eu uso vestido.</span></td></tr>
+ <tr><td class="thc">สวม</td><td>vestir cobrindo uma parte do corpo (mais formal)</td><td class="thc">กรุณาสวมหน้ากาก<span class="pt">Por favor, use máscara.</span></td></tr>
+ <tr><td class="thc">ถอด</td><td>tirar (o oposto)</td><td class="thc">ถอดรองเท้า<span class="pt">Tire os sapatos.</span></td></tr></table></div>
+ <h3>Cores (toda cor começa com สี)</h3>
+ <div class="grid-words">${words([["สีแดง","vermelho","🔴"],["สีเหลือง","amarelo","🟡"],["สีเขียว","verde","🟢"],["สีฟ้า","azul claro","🩵"],["สีส้ม","laranja","🟠"],["สีชมพู","rosa","🩷"],["สีดำ","preto","⚫"],["สีขาว","branco","⚪"],["สีน้ำตาล","marrom","🟤"],["สีม่วง","roxo","🟣"],["สีเทา","cinza","🩶"]])}</div>
+ <div class="formula">Eu + verbo + roupa + cor (a cor vem DEPOIS)</div>
+ ${ex([["ฉันใส่ชุดกระโปรงสีเหลือง","Eu uso um vestido amarelo."],["ฉันสวมหมวกสีแดง","Eu uso um chapéu vermelho."],["ฉันใส่กางเกงขายาวสีน้ำตาล","Eu uso uma calça comprida marrom."],["กระโปรงมีสีอะไร","A saia é de que cor?"],["แล้วคุณล่ะ ใส่อะไรวันนี้","E você, está usando o quê hoje?"],["สีที่ฉันชอบมากที่สุดคือสีเขียว","A cor de que eu mais gosto é verde."]])}
+ <div class="trap"><b>Pegadinha:</b> igual ao português, a cor vem depois da roupa: <span class="th">เสื้อสีขาว</span> (camisa branca), nunca <span class="th">สีขาวเสื้อ</span>.</div>`,
+ quiz:[
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: สีแดง / หมวก / ฉัน / สวม",pt:"Eu uso um chapéu vermelho.",tiles:["สีแดง","หมวก","ฉัน","สวม"],a:["ฉันสวมหมวกสีแดง"]},
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: สีเหลือง / ใส่ / ชุดกระโปรง / ฉัน",pt:"Eu uso um vestido amarelo.",tiles:["สีเหลือง","ใส่","ชุดกระโปรง","ฉัน"],a:["ฉันใส่ชุดกระโปรงสีเหลือง"]},
+  {t:"mc",q:"ถอดรองเท้า แปลว่าอะไร",pt:"O que quer dizer ถอดรองเท้า?",o:["Calce os sapatos.","Tire os sapatos.","Compre sapatos.","Sapatos pretos."],a:1,why:"ถอด = tirar."},
+  {t:"mc",q:"สีม่วง คือสีอะไร",pt:"สีม่วง é que cor?",o:["marrom","roxo","rosa","cinza"],a:1,why:"ม่วง = roxo. Marrom é น้ำตาล (cor de açúcar mascavo)."},
+  {t:"mc",q:"แล้วคุณล่ะ ใส่อะไรวันนี้ · เลือกคำตอบที่ดีที่สุด",pt:"E você, está usando o quê hoje? Escolha a melhor resposta.",o:["ฉันใส่เสื้อยืดสีขาว","ฉันตื่นนอนหกโมงเช้า","ฉันกินข้าว","ฉันสูงกว่าน้อง"],a:0,why:"A pergunta é o que você está vestindo hoje."},
+  {t:"mc",q:"ประโยคใหม่ · เลือกคำแปลที่ถูกต้อง: \"saia preta\"",pt:"Escolha a tradução certa.",o:["สีดำกระโปรง","กระโปรงสีดำ","กระโปรงดำสี","สีกระโปรงดำ"],a:1,why:"Roupa primeiro, depois สี + cor."},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง",pt:"Por favor, tire os sapatos.",tiles:["รองเท้า","ถอด","กรุณา"],a:["กรุณาถอดรองเท้า"]}
+ ]
+},
+{
+ id:"a15", chip:"Aula 15 · Comparar", title:"Aula 15: aparência e comparação", tag:"Unidade 3 · Lições 3 e 4",
+ html:`
+ <div class="box teach"><div class="eyebrow">Explicação da aula</div><p>Os adjetivos de aparência juntam o corpo da aula 13 com um adjetivo: <span class="th">ตา</span> (olho) + <span class="th">โต</span> (grande) = olhos grandes. O adjetivo vem depois e não precisa do verbo "ser": <span class="th">เขาสูง</span> já é "ele é alto".</p><p>Para intensificar, a palavra vai depois do adjetivo: <span class="th">สูงมาก</span> (muito alto), <span class="th">สูงนิดหน่อย</span> (um pouco alto), <span class="th">สวยจัง</span> (que lindo!), <span class="th">สวยสุดๆ</span> (lindo demais).</p><p>Comparar tem dois casos, e a prova adora misturar. <b>Duas coisas diferentes</b> → <span class="th">กว่า</span>, o nosso "mais do que": <span class="th">A สูงกว่า B</span>. <b>A mesma coisa mudando com o tempo</b> → <span class="th">ขึ้น</span> (ficou mais) ou <span class="th">ลง</span> (ficou menos): <span class="th">ฉันอ้วนขึ้น</span> = engordei, <span class="th">ฉันผอมลง</span> = emagreci. Truque: <span class="th">ขึ้น</span> também é o verbo "subir" e <span class="th">ลง</span> é "descer".</p><p><b>O mais de todos</b> → <span class="th">ที่สุด</span>: <span class="th">สูงที่สุด</span>. Perguntas: <span class="th">ใคร + adjetivo + กว่า</span> (quem é mais…?) ou <span class="th">A กับ B ใคร/อะไร + adjetivo + กว่า</span> (A ou B, quem/qual é mais…?).</p></div>
+ <div class="grid-words">${words([["ตาโต","olhos grandes","👀"],["ตาเล็ก","olhos pequenos","😑"],["คอยาว","pescoço comprido","🦒"],["ผมสั้น","cabelo curto","💇"],["ผมยาว","cabelo longo","👩‍🦰"],["หูใหญ่","orelha grande","👂"],["ขายาว","perna comprida","🦵"]])}</div>
+ <h3>Intensificar (vem depois do adjetivo)</h3>
+ ${ex([["ผมสั้นนิดหน่อย","cabelo um pouco curto"],["สูงมาก","muito alto"],["ตาโตจัง","que olhos grandes!"],["สวยสุดๆ","super bonita"]])}
+ <h3>Comparar duas coisas: กว่า = mais que</h3>
+ <div class="formula">A + adjetivo + กว่า + B</div>
+ ${ex([["ภาษาไทยยากกว่าภาษาอังกฤษ","Tailandês é mais difícil que inglês."],["เท้าของคุณใหญ่กว่าเท้าของฉัน","Seu pé é maior que o meu."],["พ่อแก่กว่าแม่ห้าปี","O pai é cinco anos mais velho que a mãe."],["ฉันสูงกว่าน้องห้าเซนติเมตร","Sou cinco centímetros mais alta que meu irmão mais novo."]])}
+ <h3>A mesma pessoa mudou: ขึ้น (subiu) / ลง (desceu)</h3>
+ ${ex([["ฉันอ้วนขึ้น","Eu engordei."],["ฉันผอมลง","Eu emagreci."],["ฉันอ่านภาษาไทยเก่งขึ้น","Estou lendo tailandês melhor."],["พูดดังขึ้นอีกได้ไหม","Pode falar mais alto?"]])}
+ <h3>O mais: ที่สุด</h3>
+ ${ex([["เขาสูงที่สุด","Ele é o mais alto."]])}
+ <h3>Perguntas de comparação (prova oral)</h3>
+ ${ex([["ใครสูงกว่า","Quem é mais alto?"],["เขาสูงกว่าฉันไหม","Ele é mais alto que eu?"],["ผัดไทยกับส้มตำ อะไรอร่อยกว่า","Pad thai ou som tam, qual é mais gostoso?"]])}
+ <h3>Opostos</h3>
+ <div class="tablewrap"><table>
+ <tr><td class="thc">สั้น ↔ ยาว</td><td>curto ↔ longo</td></tr><tr><td class="thc">เล็ก ↔ ใหญ่</td><td>pequeno ↔ grande</td></tr>
+ <tr><td class="thc">ง่าย ↔ ยาก</td><td>fácil ↔ difícil</td></tr><tr><td class="thc">แก่ ↔ อ่อน</td><td>velho ↔ jovem</td></tr>
+ <tr><td class="thc">เตี้ย ↔ สูง</td><td>baixo ↔ alto</td></tr><tr><td class="thc">แพง ↔ ถูก</td><td>caro ↔ barato</td></tr></table></div>`,
+ quiz:[
+  {t:"mc",q:"เติมคำในช่องว่าง: ภาษาไทยยาก___ภาษาอังกฤษ",pt:"Tailandês é mais difícil que inglês.",o:["ขึ้น","กว่า","ลง","มาก"],a:1,why:"Comparar duas coisas diferentes = กว่า."},
+  {t:"mc",q:"เติมคำในช่องว่าง: ฉันอ้วน___ (ฉันหนักกว่าเดิม)",pt:"Complete: eu engordei.",o:["กว่า","ลง","ขึ้น","ที่สุด"],a:2,why:"A mesma pessoa aumentou = ขึ้น."},
+  {t:"mc",q:"คำตรงข้ามของ แพง คือ",pt:"O oposto de แพง (caro) é:",o:["ถูก","สูง","ยาก","แก่"],a:0,why:"แพง ↔ ถูก."},
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: กว่า / แม่ / แก่ / พ่อ",pt:"O pai é mais velho que a mãe.",tiles:["กว่า","แม่","แก่","พ่อ"],a:["พ่อแก่กว่าแม่"]},
+  {t:"mc",q:"ประโยคใหม่ · เติมคำในช่องว่าง: แม่เตี้ย___พ่อ",pt:"A mãe é mais baixa que o pai.",o:["ขึ้น","ลง","กว่า","สุดๆ"],a:2,why:"Duas pessoas diferentes = กว่า."},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง: ง่าย / ภาษาจีน / ภาษาไทย / กว่า / ไหม",pt:"Tailandês é mais fácil que chinês?",tiles:["ง่าย","ภาษาจีน","ภาษาไทย","กว่า","ไหม"],a:["ภาษาไทยง่ายกว่าภาษาจีนไหม"]},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง",pt:"Eu e você, quem tem o cabelo mais comprido?",tiles:["ใคร","ฉันกับคุณ","กว่า","ผมยาว"],a:["ฉันกับคุณใครผมยาวกว่า"]}
+ ]
+},
+{
+ id:"a13", chip:"Aula 13 · Corpo", title:"Aula 13: corpo, ordens e มี", tag:"Unidade 3 · Lições 1 e 2",
+ html:`
+ <div class="box teach"><div class="eyebrow">Explicação da aula</div><p>A aula começa o vocabulário do corpo e ensina a dar ordens. A ordem não tem sujeito: o verbo sozinho já manda (<span class="th">ฟัง</span> = escute!). Sozinho soa duro, então os tailandeses quase sempre suavizam.</p><p><span class="th">หน่อย</span> no fim = "um pouquinho", vira pedido. <span class="th">ช่วย</span> no começo = "por favor". <span class="th">นะ</span> no fim deixa simpático, como "tá?". <span class="th">อย่า</span> no começo proíbe: <span class="th">อย่าลืม</span> = não esqueça.</p><p>O verbo <span class="th">มี</span> tem dois usos. Com alguém antes, é "ter": <span class="th">ฉันมีปากกา</span>. Sem ninguém antes e com um lugar depois, é "haver/tem": <span class="th">มีแมวในบ้าน</span> = tem um gato na casa.</p><p>Para contar, o tailandês põe uma palavra de medida depois do número. O que vem em par usa <span class="th">ข้าง</span> (lado): <span class="th">มือสองข้าง</span>. Dedos usam <span class="th">นิ้ว</span>: <span class="th">นิ้วมือสิบนิ้ว</span>. A pergunta é <span class="th">กี่</span> + essa palavra: <span class="th">กี่ข้าง</span>? <span class="th">กี่นิ้ว</span>?</p></div>
+ <div class="grid-words">${words([["มือ","mão","✋"],["แขน","braço","💪"],["นิ้วมือ","dedo da mão","☝️"],["เท้า","pé","🦶"],["ขา","perna","🦵"],["นิ้วเท้า","dedo do pé","🦶"]])}</div>
+ <h3>Dar ordens</h3>
+ <p>Direto: só o verbo, sem sujeito. Para ficar educado, acrescente uma partícula.</p>
+ <div class="tablewrap"><table><tr><th>Jeito</th><th>Exemplo</th></tr>
+ <tr><td>Direto</td><td class="thc">ฟังฉัน<span class="pt">Me escute.</span></td></tr>
+ <tr><td><span class="th">หน่อย</span> no fim (um pouquinho)</td><td class="thc">ฟังฉันหน่อย<span class="pt">Me escuta um pouquinho.</span></td></tr>
+ <tr><td><span class="th">ช่วย</span> no começo (por favor)</td><td class="thc">ช่วยปิดประตูหน่อย<span class="pt">Fecha a porta, por favor.</span></td></tr>
+ <tr><td><span class="th">นะ</span> no fim (amigável)</td><td class="thc">นั่งก่อนนะ<span class="pt">Senta primeiro, tá?</span></td></tr>
+ <tr><td><span class="th">อย่า</span> no começo (não!)</td><td class="thc">อย่าลืม<span class="pt">Não esqueça.</span></td></tr></table></div>
+ <h3>มี: ter e haver</h3>
+ ${ex([["ผมมีปากกา","Eu tenho uma caneta. (posse: sujeito + มี + coisa)"],["มีแมวในบ้าน","Tem um gato na casa. (existe: มี + coisa + lugar)"],["คุณมีมือกี่ข้าง","Você tem quantas mãos?"],["ฉันมีมือสองข้าง","Eu tenho duas mãos."],["คุณมีนิ้วมือกี่นิ้ว","Você tem quantos dedos?"],["ฉันมีนิ้วมือสิบนิ้ว","Eu tenho dez dedos."]])}
+ <div class="trap"><b>Pegadinha:</b> contar mão, braço, pé e perna usa <span class="th">ข้าง</span> (lado). Contar dedos usa <span class="th">นิ้ว</span>.</div>`,
+ quiz:[
+  {t:"mc",q:"เลือกคำแปลที่ถูกต้อง: \"Não esqueça\"",pt:"Escolha a tradução certa.",o:["ลืมอย่า","อย่าลืม","ไม่ลืม","ลืมหน่อย"],a:1,why:"Proibição = อย่า + verbo."},
+  {t:"mc",q:"คุณมีขากี่ข้าง · ตอบคำถาม",pt:"Você tem quantas pernas? Responda.",o:["ฉันมีขาสองข้าง","ฉันมีขาสองนิ้ว","ฉันมีสองขา","ขาสองฉันมี"],a:0,why:"Perna conta com ข้าง: ขาสองข้าง."},
+  {t:"order",q:"เรียงประโยคให้ถูกต้อง: บ้าน / มี / ใน / แมว",pt:"Tem um gato na casa.",tiles:["บ้าน","มี","ใน","แมว"],a:["มีแมวในบ้าน"]},
+  {t:"mc",q:"ประโยคใหม่ · เลือกคำแปลที่ถูกต้อง: \"Não corra dentro de casa.\"",pt:"Escolha a tradução certa.",o:["วิ่งอย่าในบ้าน","อย่าวิ่งในบ้าน","ไม่วิ่งในบ้าน","ช่วยวิ่งในบ้าน"],a:1,why:"Proibição = อย่า + verbo."},
+  {t:"order",q:"ประโยคใหม่ · เรียงประโยคให้ถูกต้อง: นิ้วเท้า / มี / นิ้ว / ฉัน / สิบ",pt:"Eu tenho dez dedos do pé.",tiles:["นิ้วเท้า","มี","นิ้ว","ฉัน","สิบ"],a:["ฉันมีนิ้วเท้าสิบนิ้ว"]}
+ ]
+},
+{
+ id:"dias", chip:"Dias da semana", title:"Dias da semana (extra)", tag:"Não está nos PDFs da pasta A2: confira com a apostila",
+ html:`
+ <div class="box teach"><div class="eyebrow">Explicação da aula</div><p>Cada dia é de um astro: <span class="th">วัน</span> (dia) + o astro. <span class="th">อาทิตย์</span> Sol (domingo), <span class="th">จันทร์</span> Lua (segunda), <span class="th">อังคาร</span> Marte (terça), <span class="th">พุธ</span> Mercúrio (quarta), <span class="th">พฤหัสบดี</span> Júpiter (quinta), <span class="th">ศุกร์</span> Vênus (sexta), <span class="th">เสาร์</span> Saturno (sábado). É o mesmo sistema do espanhol: lunes (Lua), martes (Marte), miércoles (Mercúrio), jueves (Júpiter), viernes (Vênus).</p><p><span class="th">อาทิตย์</span> também quer dizer "semana", por isso a aula 23 tem <span class="th">อาทิตย์ที่แล้ว</span> (semana passada). Para perguntar o dia: <span class="th">วันนี้วันอะไร</span>. Ontem é <span class="th">เมื่อวานนี้</span>, amanhã é <span class="th">พรุ่งนี้</span>.</p></div>
+ <p>Todo dia começa com <span class="th">วัน</span> (dia). Na Tailândia cada dia tem uma cor, então você aprende dias e cores juntos.</p>
+ <div class="box">
+  ${[["วันอาทิตย์","domingo","#d93a2b","vermelho"],["วันจันทร์","segunda","#f2c40f","amarelo"],["วันอังคาร","terça","#ec7fb0","rosa"],["วันพุธ","quarta","#2e9e4f","verde"],["วันพฤหัสบดี","quinta","#f08a1c","laranja"],["วันศุกร์","sexta","#5fb4e8","azul claro"],["วันเสาร์","sábado","#7b4bb3","roxo"]].map(d=>`<div class="day"><span class="dot" style="background:${d[2]}"></span><div><span class="th">${d[0]}</span><span class="pt">${d[1]} · cor: ${d[3]}</span></div><button class="say" data-say="${d[0]}" aria-label="Ouvir">🔊</button></div>`).join("")}
+ </div>
+ ${ex([["วันนี้วันอะไร","Hoje é que dia?"],["วันนี้วันจันทร์","Hoje é segunda."],["พรุ่งนี้วันอังคาร","Amanhã é terça."],["เมื่อวานนี้วันอาทิตย์","Ontem foi domingo."]])}`,
+ quiz:[
+  {t:"mc",q:"วันศุกร์ แปลว่าอะไร",pt:"O que é วันศุกร์?",o:["quinta","sexta","sábado","domingo"],a:1,why:"ศุกร์ = sexta (Vênus)."},
+  {t:"mc",q:"วันนี้วันจันทร์ พรุ่งนี้วันอะไร",pt:"Hoje é segunda; amanhã é que dia?",o:["วันอาทิตย์","วันอังคาร","วันพุธ","วันเสาร์"],a:1,why:"Depois de segunda vem terça: วันอังคาร."}
+ ]
+},
+{
+ id:"texto", chip:"Interpretação", title:"Interpretação de texto: uma carta", tag:"Texto inédito, no tamanho da prova",
+ html:`<p>Texto novo, com o vocabulário que você já aprendeu. Sem tradução, como na prova. Leia (ou ouça cada linha) e depois responda.</p>
+ <div class="box story"><div class="ex"><div><span class="th">ถึง ลูซี่</span></div><button class="say" data-say="ถึง ลูซี่" aria-label="Ouvir">🔊</button></div><div class="ex"><div><span class="th">สวัสดีค่ะ ลูซี่ ตอนนี้ฉันอยู่ที่เชียงใหม่กับครอบครัว บ้านของเรามีห้องนอนสามห้อง และมีหมาหนึ่งตัว</span></div><button class="say" data-say="สวัสดีค่ะ ลูซี่ ตอนนี้ฉันอยู่ที่เชียงใหม่กับครอบครัว บ้านของเรามีห้องนอนสามห้อง และมีหมาหนึ่งตัว" aria-label="Ouvir">🔊</button></div><div class="ex"><div><span class="th">ทุกวันฉันตื่นนอนหกโมงเช้า ฉันอาบน้ำ แปรงฟัน และกินอาหารเช้ากับแม่ ตอนแปดโมงเช้าฉันไปเรียนภาษาอังกฤษ ฉันเรียนวันจันทร์ถึงวันศุกร์</span></div><button class="say" data-say="ทุกวันฉันตื่นนอนหกโมงเช้า ฉันอาบน้ำ แปรงฟัน และกินอาหารเช้ากับแม่ ตอนแปดโมงเช้าฉันไปเรียนภาษาอังกฤษ ฉันเรียนวันจันทร์ถึงวันศุกร์" aria-label="Ouvir">🔊</button></div><div class="ex"><div><span class="th">ครูของฉันชื่อครูแดง เขาสูงมากและมีผมสั้น เขาสอนสนุก แต่ภาษาอังกฤษยากกว่าภาษาไทย</span></div><button class="say" data-say="ครูของฉันชื่อครูแดง เขาสูงมากและมีผมสั้น เขาสอนสนุก แต่ภาษาอังกฤษยากกว่าภาษาไทย" aria-label="Ouvir">🔊</button></div><div class="ex"><div><span class="th">เมื่อวานนี้เป็นวันเสาร์ ฉันไม่ได้ไปเรียน ฉันได้ไปภูเขากับพี่ชาย อากาศหนาวมาก ฉันใส่เสื้อสีม่วงและกางเกงขายาวสีดำ พี่ชายสวมหมวกสีเขียว</span></div><button class="say" data-say="เมื่อวานนี้เป็นวันเสาร์ ฉันไม่ได้ไปเรียน ฉันได้ไปภูเขากับพี่ชาย อากาศหนาวมาก ฉันใส่เสื้อสีม่วงและกางเกงขายาวสีดำ พี่ชายสวมหมวกสีเขียว" aria-label="Ouvir">🔊</button></div><div class="ex"><div><span class="th">เราเดินขึ้นภูเขาตั้งแต่เก้าโมงเช้าจนบ่ายสองโมง ขาของฉันเจ็บมาก พี่ชายเดินเร็วกว่าฉัน</span></div><button class="say" data-say="เราเดินขึ้นภูเขาตั้งแต่เก้าโมงเช้าจนบ่ายสองโมง ขาของฉันเจ็บมาก พี่ชายเดินเร็วกว่าฉัน" aria-label="Ouvir">🔊</button></div><div class="ex"><div><span class="th">ตอนเย็นเรากลับบ้านมา แม่ทำต้มยำ อร่อยที่สุด แล้วเราก็ดูโทรทัศน์ ฉันนอนสี่ทุ่ม</span></div><button class="say" data-say="ตอนเย็นเรากลับบ้านมา แม่ทำต้มยำ อร่อยที่สุด แล้วเราก็ดูโทรทัศน์ ฉันนอนสี่ทุ่ม" aria-label="Ouvir">🔊</button></div><div class="ex"><div><span class="th">แล้วคุณล่ะ เมื่อวานนี้คุณทำอะไร เขียนจดหมายมาเล่าให้ฉันฟังนะ</span></div><button class="say" data-say="แล้วคุณล่ะ เมื่อวานนี้คุณทำอะไร เขียนจดหมายมาเล่าให้ฉันฟังนะ" aria-label="Ouvir">🔊</button></div><div class="ex"><div><span class="th">คิดถึงนะ ปลา</span></div><button class="say" data-say="คิดถึงนะ ปลา" aria-label="Ouvir">🔊</button></div></div>
+ <p class="warn"><b>Glossário:</b> <span class="th" style="font-size:1rem">ถึง</span> para / até · <span class="th" style="font-size:1rem">ครอบครัว</span> família · <span class="th" style="font-size:1rem">ห้องนอน</span> quarto · <span class="th" style="font-size:1rem">หมา</span> cachorro · <span class="th" style="font-size:1rem">ตัว</span> classificador de animais · <span class="th" style="font-size:1rem">สนุก</span> divertido · <span class="th" style="font-size:1rem">ภูเขา</span> montanha · <span class="th" style="font-size:1rem">อากาศ</span> tempo (clima) · <span class="th" style="font-size:1rem">หนาว</span> frio · <span class="th" style="font-size:1rem">เดิน</span> andar · <span class="th" style="font-size:1rem">ตั้งแต่…จน</span> desde…até · <span class="th" style="font-size:1rem">เจ็บ</span> doer · <span class="th" style="font-size:1rem">ต้มยำ</span> sopa tom yam · <span class="th" style="font-size:1rem">จดหมาย</span> carta · <span class="th" style="font-size:1rem">คิดถึง</span> sentir saudade</p>
+ <details class="box"><summary><b>Ver a tradução</b> (só depois de responder)</summary><p>Para Lucy. Olá, Lucy! Agora estou em Chiang Mai com a família. Nossa casa tem três quartos e um cachorro. Todo dia acordo às 6h, tomo banho, escovo os dentes e tomo café com a mamãe. Às 8h vou à aula de inglês; estudo de segunda a sexta. Minha professora se chama Daeng; é muito alta e tem cabelo curto. Ela ensina de um jeito divertido, mas inglês é mais difícil que tailandês. Ontem foi sábado. Não fui à aula; fui à montanha com meu irmão mais velho. Estava muito frio. Usei uma blusa roxa e calça comprida preta; meu irmão usava um chapéu verde. Subimos a montanha das 9h às 14h. Minhas pernas doeram muito. Meu irmão anda mais rápido que eu. À noite voltamos para casa. A mamãe fez tom yam, delicioso demais, e vimos TV. Dormi às 22h. E você? O que fez ontem? Escreva me contando, tá? Saudades. Pla.</p></details>`,
+ quiz:[
+  {t:"mc",q:"ปลาอยู่ที่ไหน",pt:"Onde a Pla mora?",o:["กรุงเทพฯ","เชียงใหม่","ภูเก็ต"],a:1,why:"ตอนนี้ฉันอยู่ที่เชียงใหม่."},
+  {t:"mc",q:"ปลาตื่นนอนกี่โมง",pt:"",o:["หกโมงเช้า","แปดโมงเช้า","สองทุ่ม"],a:0,why:"ทุกวันฉันตื่นนอนหกโมงเช้า."},
+  {t:"mc",q:"ครูแดงเป็นอย่างไร",pt:"",o:["เตี้ยและมีผมยาว","สูงมากและมีผมสั้น","สูงและมีผมยาว"],a:1,why:"เขาสูงมากและมีผมสั้น."},
+  {t:"mc",q:"เมื่อวานนี้ปลาไปไหน",pt:"",o:["ไปเรียน","ไปตลาด","ไปภูเขา"],a:2,why:"ฉันได้ไปภูเขากับพี่ชาย. E ไม่ได้ไปเรียน = não foi à aula."},
+  {t:"mc",q:"ใครเดินเร็วกว่า",pt:"",o:["ปลา","พี่ชาย","แม่"],a:1,why:"พี่ชายเดินเร็วกว่าฉัน."},
+  {t:"mc",q:"ข้อไหนถูก",pt:"Qual alternativa é verdadeira?",o:["ปลาเรียนวันเสาร์","ภาษาอังกฤษยากกว่าภาษาไทย","พี่ชายใส่เสื้อสีม่วง"],a:1,why:"Ela estuda de segunda a sexta, e quem usou roxo foi ela."},
+  {t:"mc",q:"เติมคำในช่องว่าง: เมื่อวานนี้ปลา ____ ไปเรียน",pt:"Complete.",o:["ไม่ได้","ไม่","แล้ว","มา"],a:0,why:"Passado negativo: ไม่ได้ไปเรียน."},
+  {t:"mc",q:"เติมคำในช่องว่าง: อากาศบนภูเขา ____ มาก",pt:"",o:["หนาว","ร้อน","ยาว","ถูก"],a:0,why:"อากาศหนาวมาก = estava muito frio."},
+  {t:"mc",q:"เติมคำในช่องว่าง: ปลาใส่เสื้อสี ____",pt:"",o:["เขียว","ม่วง","ดำ","ฟ้า"],a:1,why:"ฉันใส่เสื้อสีม่วง. Verde era o chapéu do irmão; preta, a calça."},
+  {t:"mc",q:"เติมคำในช่องว่าง: ปลานอน ____",pt:"",o:["ตีสี่","สี่ทุ่ม","สี่โมงเย็น","บ่ายสี่โมง"],a:1,why:"ฉันนอนสี่ทุ่ม = 22h."},
+  {t:"open",q:"ทุกวันปลาทำอะไรตอนแปดโมงเช้า",pt:"Responda (em tailandês).",model:"ปลาไปเรียนภาษาอังกฤษ"},
+  {t:"open",q:"พี่ชายสวมอะไร",pt:"Responda (em tailandês).",model:"พี่ชายสวมหมวกสีเขียว"},
+  {t:"open",q:"ตอนเย็นแม่ทำอะไร",pt:"Responda (em tailandês).",model:"แม่ทำต้มยำ"},
+  {t:"open",q:"บ้านของปลามีหมากี่ตัว",pt:"Responda (em tailandês).",model:"มีหมาหนึ่งตัว"}
+ ]
+},
+{
+ id:"leitura", chip:"Leitura em voz alta", title:"Leitura em voz alta com os tons", tag:"Ouça quantas vezes quiser e avalie a sua leitura",
+ html:`<div class="box teach"><div class="eyebrow">Como treinar</div>
+ <p>1. Escolha a velocidade <b>Lenta</b> e <b>Repetir 2x</b> no topo da página e toque em 🔊 em uma frase. Repita em voz alta junto com a voz, imitando a melodia: tom que sobe, que desce, que fica reto.</p>
+ <p>2. Quando conseguir, abra <b>🎤 Avaliar minha leitura</b>, toque na caixa, troque para o teclado tailandês e toque no microfone do teclado. Leia a frase e toque em <b>Avaliar</b>.</p>
+ <p>3. As palavras em verde foram entendidas; as vermelhas, não. Ouça de novo só essas e repita.</p>
+ <p class="warn">Para o microfone do teclado aparecer: Ajustes › Geral › Teclado › Teclados › Adicionar Teclado › Tailandês, e ative o Ditado no mesmo menu.</p></div>
+ <h3>Carta da ปลา (interpretação)</h3><div class="row"><button class="btn ghost" data-say="ถึง ลูซี่ สวัสดีค่ะ ลูซี่ ตอนนี้ฉันอยู่ที่เชียงใหม่กับครอบครัว บ้านของเรามีห้องนอนสามห้อง และมีหมาหนึ่งตัว ทุกวันฉันตื่นนอนหกโมงเช้า ฉันอาบน้ำ แปรงฟัน และกินอาหารเช้ากับแม่ ตอนแปดโมงเช้าฉันไปเรียนภาษาอังกฤษ ฉันเรียนวันจันทร์ถึงวันศุกร์ ครูของฉันชื่อครูแดง เขาสูงมากและมีผมสั้น เขาสอนสนุก แต่ภาษาอังกฤษยากกว่าภาษาไทย เมื่อวานนี้เป็นวันเสาร์ ฉันไม่ได้ไปเรียน ฉันได้ไปภูเขากับพี่ชาย อากาศหนาวมาก ฉันใส่เสื้อสีม่วงและกางเกงขายาวสีดำ พี่ชายสวมหมวกสีเขียว เราเดินขึ้นภูเขาตั้งแต่เก้าโมงเช้าจนบ่ายสองโมง ขาของฉันเจ็บมาก พี่ชายเดินเร็วกว่าฉัน ตอนเย็นเรากลับบ้านมา แม่ทำต้มยำ อร่อยที่สุด แล้วเราก็ดูโทรทัศน์ ฉันนอนสี่ทุ่ม แล้วคุณล่ะ เมื่อวานนี้คุณทำอะไร เขียนจดหมายมาเล่าให้ฉันฟังนะ คิดถึงนะ ปลา">🔊 Ouvir o texto inteiro</button></div><div class="box">${rex([["ถึง ลูซี่", ""], ["สวัสดีค่ะ ลูซี่ ตอนนี้ฉันอยู่ที่เชียงใหม่กับครอบครัว", ""], ["บ้านของเรามีห้องนอนสามห้อง และมีหมาหนึ่งตัว", ""], ["ทุกวันฉันตื่นนอนหกโมงเช้า", ""], ["ฉันอาบน้ำ แปรงฟัน และกินอาหารเช้ากับแม่", ""], ["ตอนแปดโมงเช้าฉันไปเรียนภาษาอังกฤษ", ""], ["ฉันเรียนวันจันทร์ถึงวันศุกร์", ""], ["ครูของฉันชื่อครูแดง เขาสูงมากและมีผมสั้น", ""], ["เขาสอนสนุก แต่ภาษาอังกฤษยากกว่าภาษาไทย", ""], ["เมื่อวานนี้เป็นวันเสาร์ ฉันไม่ได้ไปเรียน", ""], ["ฉันได้ไปภูเขากับพี่ชาย อากาศหนาวมาก", ""], ["ฉันใส่เสื้อสีม่วงและกางเกงขายาวสีดำ", ""], ["พี่ชายสวมหมวกสีเขียว", ""], ["เราเดินขึ้นภูเขาตั้งแต่เก้าโมงเช้าจนบ่ายสองโมง", ""], ["ขาของฉันเจ็บมาก พี่ชายเดินเร็วกว่าฉัน", ""], ["ตอนเย็นเรากลับบ้านมา แม่ทำต้มยำ อร่อยที่สุด", ""], ["แล้วเราก็ดูโทรทัศน์ ฉันนอนสี่ทุ่ม", ""], ["แล้วคุณล่ะ เมื่อวานนี้คุณทำอะไร", ""], ["เขียนจดหมายมาเล่าให้ฉันฟังนะ", ""], ["คิดถึงนะ ปลา", ""]])}</div><h3>História da นกน้อย (Aula 23)</h3><div class="row"><button class="btn ghost" data-say="เมื่อวานนี้ ฝนตกหนักมาก นกน้อยได้ตื่นนอนแต่เช้า เขาดื่มกาแฟและกินขนมปังเป็นอาหารเช้า ตอนสายนกน้อยได้ไปตลาด เขาซื้อผลไม้และปลาสด แต่ตอนที่กำลังจะกลับบ้าน เธอได้เจอเพื่อนเก่าคนหนึ่ง พวกเขาคุยกันเรื่องอดีต พอถึงตอนเย็น นกน้อยกลับบ้านแล้ว เขาทำอาหารเย็นและดูทีวีจนหลับไป เมื่อวานนี้เป็นวันที่ดีมากจริงๆ">🔊 Ouvir o texto inteiro</button></div><div class="box">${rex([["เมื่อวานนี้ ฝนตกหนักมาก", ""], ["นกน้อยได้ตื่นนอนแต่เช้า", ""], ["เขาดื่มกาแฟและกินขนมปังเป็นอาหารเช้า", ""], ["ตอนสายนกน้อยได้ไปตลาด", ""], ["เขาซื้อผลไม้และปลาสด", ""], ["แต่ตอนที่กำลังจะกลับบ้าน", ""], ["เธอได้เจอเพื่อนเก่าคนหนึ่ง", ""], ["พวกเขาคุยกันเรื่องอดีต", ""], ["พอถึงตอนเย็น นกน้อยกลับบ้านแล้ว", ""], ["เขาทำอาหารเย็นและดูทีวีจนหลับไป", ""], ["เมื่อวานนี้เป็นวันที่ดีมากจริงๆ", ""]])}</div>`,
+ quiz:[]
+},
+{
+ id:"oral", chip:"Prova oral", title:"Perguntas orais prováveis", tag:"Ouça, pause e responda em voz alta",
+ html:`<p>Toque em 🔊 na pergunta, responda em voz alta e depois ouça a resposta modelo. Troque as informações pelas suas.</p>
+ ${[["เมื่อวานนี้คุณทำอะไร","Ontem, o que você fez?","เมื่อวานนี้ฉันอ่านหนังสือที่บ้าน","Ontem eu li em casa."],["อาทิตย์ที่แล้วคุณไปไหน","Semana passada, aonde você foi?","อาทิตย์ที่แล้วฉันไปตลาดมา","Semana passada fui ao mercado."],["ตามปกติคุณตื่นนอนกี่โมง","Normalmente acorda que horas?","ราวๆ หกโมงเช้า","Por volta das 6h."],["คุณเรียนภาษาไทยทุกวันไหม","Você estuda tailandês todo dia?","ใช่ ฉันเรียนภาษาไทยทุกวัน","Sim, estudo todo dia."],["วันนี้คุณใส่อะไร","Hoje você está usando o quê?","วันนี้ฉันใส่เสื้อยืดสีขาว","Hoje uso camiseta branca."],["คุณชอบสีอะไรมากที่สุด","De que cor você mais gosta?","สีที่ฉันชอบมากที่สุดคือสีฟ้า","A cor de que mais gosto é azul claro."],["คุณมีผมยาวใช่ไหม","Você tem cabelo comprido, não é?","ใช่ ฉันมีผมยาว","Sim, tenho cabelo comprido."],["เมื่อก่อนคุณเรียนอะไร","Antigamente você estudava o quê?","เมื่อก่อนฉันเรียนแพทย์","Antigamente eu estudava medicina."],["วันนี้วันอะไร","Hoje é que dia?","วันนี้วันอังคาร","Hoje é terça."]].map(r=>`<div class="box">${ex([[r[0],r[1]]])}${rex([[r[2],"Modelo: "+r[3]]])}</div>`).join("")}`,
+ quiz:[]
+},
+{
+ id:"prova", chip:"Prova rápida", title:"Prova rápida", tag:"15 questões sorteadas de todas as aulas",
+ html:`<p>Cada vez que você toca em "Nova prova" saem questões diferentes, incluindo horas. Meta: 12 de 15.</p>
+ <div class="row"><button class="btn" id="newExam">Nova prova</button></div>
+ <div id="examArea"></div>`,
+ quiz:[]
+}
+];
+
+function esc(s){return s.replace(/"/g,"&quot;")}
+function words(arr){return arr.map(w=>`<button class="word" data-say="${esc(w[0])}"><span class="emo">${w[2]||""}</span><span class="th">${w[0]}</span><span class="pt">${w[1]}</span></button>`).join("")}
+function rex(arr){return arr.map(e=>`<div class="ex"><div><span class="th">${e[0]}</span>${e[1]?`<span class="pt">${e[1]}</span>`:""}</div><button class="say" data-say="${esc(e[0])}" aria-label="Ouvir">🔊</button>${rc(e[0])}</div>`).join("")}
+function ex(arr){return arr.map(e=>`<div class="ex"><div><span class="th">${e[0]}</span><span class="pt">${e[1]}</span></div><button class="say" data-say="${esc(e[0])}" aria-label="Ouvir">🔊</button></div>`).join("")}
+
+/* ---------- voz ---------- */
+let thVoice=null;
+function pickVoice(){const v=speechSynthesis.getVoices();thVoice=v.find(x=>/^th/i.test(x.lang))||null;
+  document.getElementById("voiceNote").textContent = thVoice?"":"Se o 🔊 ficar mudo, instale a voz tailandesa: Ajustes › Acessibilidade › Conteúdo Falado › Vozes › Tailandês.";}
+let aRate=.85,aRep=1;try{aRate=+localStorage.getItem("thRate")||.85;aRep=+localStorage.getItem("thRep")||1}catch(e){}
+/* velocidade e repetições: a barra do topo e o painel de cada 🔊 usam os mesmos ajustes */
+function paintSegs(){document.querySelectorAll(".seg[data-k]").forEach(el=>{const cur=el.dataset.k==="rate"?aRate:aRep;el.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.v===cur))})}
+function setAudio(k,v){if(k==="rate"){aRate=v;try{localStorage.setItem("thRate",v)}catch(_){}}else{aRep=v;try{localStorage.setItem("thRep",v)}catch(_){}}paintSegs()}
+document.addEventListener("click",e=>{const b=e.target.closest(".seg[data-k] button");if(!b)return;const k=b.parentNode.dataset.k;setAudio(k,+b.dataset.v);
+  if(b.closest("#apop")&&apopText)say(apopText)});
+let apop=null,apopText="";
+function openPop(anchor,text){apopText=text;if(!apop){apop=document.createElement("div");apop.id="apop";
+    apop.innerHTML=`<span class="seg" data-k="rate"><button data-v="0.85">Normal</button><button data-v="0.55">Lenta</button><button data-v="0.4">Bem lenta</button></span><span class="seg" data-k="rep"><button data-v="1">1x</button><button data-v="2">2x</button><button data-v="3">3x</button></span><button class="pbtn" data-act="again" aria-label="Ouvir de novo">↻</button><button class="pbtn" data-act="stop" aria-label="Parar">■</button><button class="pbtn" data-act="close" aria-label="Fechar">✕</button>`;
+    apop.addEventListener("click",e=>{const a=e.target.closest("[data-act]");if(!a)return;if(a.dataset.act==="again")say(apopText);else{try{speechSynthesis.cancel()}catch(_){}if(a.dataset.act==="close")closePop()}});
+    document.body.appendChild(apop)}
+  apop.hidden=false;paintSegs();const r=anchor.getBoundingClientRect();const pw=Math.min(apop.offsetWidth,innerWidth-16);
+  let x=r.left+scrollX;x=Math.max(8+scrollX,Math.min(x,scrollX+innerWidth-pw-8));apop.style.left=x+"px";apop.style.top=(r.bottom+scrollY+6)+"px"}
+function closePop(){if(apop)apop.hidden=true}
+document.addEventListener("click",e=>{if(apop&&!apop.hidden&&!e.target.closest("#apop,[data-say]"))closePop()});
+function say(t){try{speechSynthesis.cancel();for(let i=0;i<aRep;i++){const u=new SpeechSynthesisUtterance(t.replace(/<[^>]+>/g,"").replace(/[ฯ…_/]+/g," "));u.lang="th-TH";if(thVoice)u.voice=thVoice;u.rate=aRate;speechSynthesis.speak(u);}}catch(e){}}
+document.addEventListener("click",e=>{const b=e.target.closest(".tr");if(b){const p=b.nextElementSibling;p.hidden=!p.hidden;b.textContent=p.hidden?"แปล · ver tradução":"esconder tradução"}});
+/* ---------- avaliar leitura (ditado do teclado) ---------- */
+function rc(t){return `<details class="rc" data-exp="${esc(t)}"><summary>🎤 Avaliar minha leitura</summary></details>`}
+const norm=x=>x.replace(/[\s.,!?"'“”ๆฯ·…\-]/g,"");
+function segWords(t){try{return [...new Intl.Segmenter("th",{granularity:"word"}).segment(t)].filter(w=>w.isWordLike).map(w=>w.segment)}catch(e){return t.split(/\s+/)}}
+document.addEventListener("toggle",e=>{const d=e.target;if(!d.matches||!d.matches("details.rc")||!d.open||d.dataset.ready)return;d.dataset.ready=1;
+  const exp=d.dataset.exp;const ta=document.createElement("textarea");ta.rows=2;ta.lang="th";ta.id="rc"+Math.random().toString(36).slice(2,8);
+  ta.placeholder="Toque aqui, troque para o teclado tailandês, toque no 🎤 do teclado e leia a frase em voz alta.";
+  const row=document.createElement("div");row.className="row";const go=document.createElement("button");go.className="btn";go.textContent="Avaliar";
+  const clr=document.createElement("button");clr.className="btn ghost";clr.textContent="Ler de novo";row.append(go,clr);
+  const out=document.createElement("div");out.className="fb";out.hidden=true;
+  clr.onclick=()=>{ta.value="";out.hidden=true;ta.focus()};
+  go.onclick=()=>{const got=norm(ta.value);if(!got){out.hidden=false;out.className="fb no";out.textContent="Nada foi reconhecido. Ative o ditado e leia de novo.";return}
+    const ws=segWords(exp);let ok=0;const html=ws.map(w=>{const hit=got.includes(norm(w));if(hit)ok++;return `<span class="${hit?"w-ok":"w-no"}">${w}</span>`}).join(" ");
+    const pc=Math.round(ok/ws.length*100);out.hidden=false;out.className="fb "+(pc>=80?"ok":"no");
+    out.innerHTML=`<b>${pc}% das palavras reconhecidas.</b> ${pc>=90?"Ótima leitura!":pc>=60?"Quase lá: ouça as palavras em vermelho e repita.":"Ouça a frase de novo, em velocidade lenta, e repita."}<div class="th" style="margin-top:6px">${html}</div><span class="pt">O ditado só reconhece a palavra quando a pronúncia e o tom estão próximos do certo. É uma estimativa, não a nota da professora.</span>`};
+  d.append(ta,row,out)},true);
+if("speechSynthesis" in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}else{document.getElementById("voiceNote").textContent="Este navegador não toca áudio.";}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-say]");if(b){say(b.dataset.say);openPop(b,b.dataset.say)}});
+
+/* ---------- progresso ---------- */
+let done={};try{done=JSON.parse(localStorage.getItem("thA2done")||"{}")}catch(e){}
+function markDone(id){done[id]=1;try{localStorage.setItem("thA2done",JSON.stringify(done))}catch(e){}renderChips(cur)}
+
+/* ---------- quiz ---------- */
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const WBW={"เรียงประโยคให้ถูกต้อง": [["เรียง", "ordenar"], ["ประโยค", "frase"], ["ให้", "deixar"], ["ถูกต้อง", "correto"]], "เปลี่ยนเป็นประโยคปฏิเสธ": [["เปลี่ยน", "mudar"], ["เป็น", "para"], ["ประโยค", "frase"], ["ปฏิเสธ", "negativa"]], "เปลี่ยนเป็นประโยคคำถาม": [["เปลี่ยน", "mudar"], ["เป็น", "para"], ["ประโยค", "frase"], ["คำถาม", "pergunta"]], "เปลี่ยนเป็นอดีตกาล": [["เปลี่ยน", "mudar"], ["เป็น", "para"], ["อดีตกาล", "passado"]], "เปลี่ยนประโยคต่อไปนี้ให้เป็นอดีตกาล": [["เปลี่ยน", "mudar"], ["ประโยค", "frase"], ["ต่อไปนี้", "a seguir"], ["ให้เป็น", "para virar"], ["อดีตกาล", "passado"]], "แปลงประโยคต่อไปนี้ให้เป็นทั้งประโยคปฏิเสธและประโยคคำถาม": [["แปลง", "transformar"], ["ประโยค", "frase"], ["ต่อไปนี้", "a seguir"], ["ให้เป็น", "para virar"], ["ทั้ง…และ", "tanto…quanto"], ["ปฏิเสธ", "negativa"], ["คำถาม", "pergunta"]], "เติมคำในช่องว่าง": [["เติม", "completar"], ["คำ", "palavra"], ["ใน", "em"], ["ช่องว่าง", "espaço vazio"]], "แก้ไขข้อผิดพลาด": [["แก้ไข", "corrigir"], ["ข้อผิดพลาด", "erro"]], "ประโยคไหนถูกต้อง": [["ประโยค", "frase"], ["ไหน", "qual"], ["ถูกต้อง", "correta"]], "แต่งประโยคในรูปปัจจุบัน": [["แต่ง", "compor"], ["ประโยค", "frase"], ["ใน", "em"], ["รูป", "forma"], ["ปัจจุบัน", "presente"]], "ประโยคใหม่": [["ประโยค", "frase"], ["ใหม่", "nova"]], "คัดคำกริยาสองครั้งและเขียนความหมาย": [["คัด", "copiar"], ["คำกริยา", "verbo"], ["สองครั้ง", "duas vezes"], ["และ", "e"], ["เขียน", "escrever"], ["ความหมาย", "significado"]], "จับคู่คำกริยากับความหมาย": [["จับคู่", "ligar"], ["คำกริยา", "verbo"], ["กับ", "com"], ["ความหมาย", "significado"]], "ตอบคำถามเกี่ยวกับกิจวัตรประจำวันของคุณ": [["ตอบ", "responder"], ["คำถาม", "pergunta"], ["เกี่ยวกับ", "sobre"], ["กิจวัตรประจำวัน", "rotina"], ["ของคุณ", "sua"]], "ตอบคำถามเกี่ยวกับตัวคุณ": [["ตอบ", "responder"], ["คำถาม", "pergunta"], ["เกี่ยวกับ", "sobre"], ["ตัวคุณ", "você"]], "ตอบคำถามต่อไปนี้": [["ตอบ", "responder"], ["คำถาม", "pergunta"], ["ต่อไปนี้", "a seguir"]], "ตอบคำถาม": [["ตอบ", "responder"], ["คำถาม", "pergunta"]], "ทำให้ประโยคคำสั่งสุภาพขึ้นด้วย ช่วย หน่อย หรือ นะ": [["ทำให้", "deixar"], ["ประโยคคำสั่ง", "frase de ordem"], ["สุภาพ", "educada"], ["ขึ้น", "mais"], ["ด้วย", "com"], ["หรือ", "ou"]], "บรรยายรูปร่างหน้าตาของคุณ 2 ประโยค": [["บรรยาย", "descrever"], ["รูปร่างหน้าตา", "aparência"], ["ของคุณ", "sua"], ["ประโยค", "frases"]], "วาดรูปคนหนึ่งคน แล้วเขียน 3 ประโยคว่าเขาใส่อะไร": [["วาดรูป", "desenhar"], ["คนหนึ่งคน", "uma pessoa"], ["แล้ว", "depois"], ["เขียน", "escrever"], ["ประโยค", "frases"], ["ว่า", "que"], ["เขา", "ele/ela"], ["ใส่", "veste"], ["อะไร", "o quê"]], "อ่านเรื่องแล้วตอบคำถาม": [["อ่าน", "ler"], ["เรื่อง", "texto"], ["แล้ว", "depois"], ["ตอบ", "responder"], ["คำถาม", "pergunta"]], "อ่านแล้วเลือกคำตอบที่ถูกต้อง": [["อ่าน", "ler"], ["แล้ว", "depois"], ["เลือก", "escolher"], ["คำตอบ", "resposta"], ["ที่", "que"], ["ถูกต้อง", "correta"]], "เขียน 3 ประโยคเกี่ยวกับสัปดาห์ของคุณ โดยใช้คำบอกเวลาต่างกัน": [["เขียน", "escrever"], ["ประโยค", "frases"], ["เกี่ยวกับ", "sobre"], ["สัปดาห์", "semana"], ["ของคุณ", "sua"], ["โดยใช้", "usando"], ["คำบอกเวลา", "palavras de tempo"], ["ต่างกัน", "diferentes"]], "เขียนกิจวัตรประจำวันของคุณพรุ่งนี้พร้อมเวลา 4 ประโยค": [["เขียน", "escrever"], ["กิจวัตรประจำวัน", "rotina"], ["ของคุณ", "sua"], ["พรุ่งนี้", "amanhã"], ["พร้อม", "com"], ["เวลา", "horário"], ["ประโยค", "frases"]], "เขียนคำตรงข้าม": [["เขียน", "escrever"], ["คำ", "palavra"], ["ตรงข้าม", "oposta"]], "เขียนจดหมายตอบปลา เล่าว่าเมื่อวานนี้คุณทำอะไร 4 ประโยค": [["เขียน", "escrever"], ["จดหมาย", "carta"], ["ตอบ", "responder"], ["ปลา", "Pla"], ["เล่า", "contar"], ["ว่า", "que"], ["เมื่อวานนี้", "ontem"], ["คุณ", "você"], ["ทำ", "fez"], ["อะไร", "o quê"], ["ประโยค", "frases"]], "เขียนเวลาเป็นตัวเลข": [["เขียน", "escrever"], ["เวลา", "hora"], ["เป็น", "em"], ["ตัวเลข", "números"]], "เขียนเวลาเป็นภาษาไทย": [["เขียน", "escrever"], ["เวลา", "hora"], ["เป็น", "em"], ["ภาษาไทย", "tailandês"]], "เติมคำในช่องว่างด้วย กว่า ขึ้น ลง หรือ ที่สุด": [["เติม", "completar"], ["คำ", "palavra"], ["ใน", "em"], ["ช่องว่าง", "espaço vazio"], ["ด้วย", "com"], ["หรือ", "ou"]], "เปรียบเทียบตัวคุณกับคนในครอบครัว 3 ประโยค โดยใช้ กว่า": [["เปรียบเทียบ", "comparar"], ["ตัวคุณ", "você"], ["กับ", "com"], ["คน", "pessoa"], ["ใน", "da"], ["ครอบครัว", "família"], ["ประโยค", "frases"], ["โดยใช้", "usando"]], "เปลี่ยนเป็นประโยคห้ามโดยใช้ อย่า": [["เปลี่ยน", "mudar"], ["เป็น", "para"], ["ประโยคห้าม", "frase de proibição"], ["โดยใช้", "usando"]], "เลือกคำที่ถูกต้อง": [["เลือก", "escolher"], ["คำ", "palavra"], ["ที่", "que"], ["ถูกต้อง", "correta"]], "เล่าให้เพื่อนๆ ฟัง เมื่อวานนี้คุณทำอะไร": [["เล่าให้…ฟัง", "contar para"], ["เพื่อนๆ", "amigos"], ["เมื่อวานนี้", "ontem"], ["คุณ", "você"], ["ทำ", "fez"], ["อะไร", "o quê"]], "แปลเป็นภาษาโปรตุเกส": [["แปล", "traduzir"], ["เป็น", "para"], ["ภาษาโปรตุเกส", "português"]], "แปลว่าอะไร": [["แปล", "traduzir"], ["ว่า", "que"], ["อะไร", "o quê"]], "คือกี่โมง": [["คือ", "é"], ["กี่โมง", "que horas"]], "พูดว่าอย่างไร": [["พูด", "falar"], ["ว่า", "que"], ["อย่างไร", "como"]], "เลือกคำตอบที่ดีที่สุด": [["เลือก", "escolher"], ["คำตอบ", "resposta"], ["ที่", "que"], ["ดีที่สุด", "melhor"]], "เลือกคำแปลที่ถูกต้อง": [["เลือก", "escolher"], ["คำแปล", "tradução"], ["ที่", "que"], ["ถูกต้อง", "correta"]], "คำตรงข้ามของ": [["คำ", "palavra"], ["ตรงข้าม", "oposta"], ["ของ", "de"]], "คือสีอะไร": [["คือ", "é"], ["สี", "cor"], ["อะไร", "qual"]], "ข้อไหนถูก": [["ข้อ", "alternativa"], ["ไหน", "qual"], ["ถูก", "certa"]], "พรุ่งนี้วันอะไร": [["พรุ่งนี้", "amanhã"], ["วัน", "dia"], ["อะไร", "qual"]]};
+function wbw(q){const keys=Object.keys(WBW).sort((a,b)=>b.length-a.length);const used=[];let t=q.includes(":")?q.split(":")[0]:q;
+  keys.forEach(k=>{const i=t.indexOf(k);if(i>=0){used.push([i,k]);t=t.slice(0,i)+" ".repeat(k.length)+t.slice(i+k.length)}});
+  if(!used.length)return "";used.sort((a,b)=>a[0]-b[0]);
+  return `<div class="wbw">${used.map(([,k])=>WBW[k].map(([th,pt])=>`<button class="wb" data-say="${esc(th)}" aria-label="Ouvir ${esc(pt)}"><b class="th">${th}</b> ${pt} 🔈</button>`).join("")).join('<span class="sep">·</span>')}</div>`}
+/* ---------- progresso salvo neste aparelho (sobrevive às atualizações do curso) ---------- */
+let ST={ink:{},pads:{},ans:{}};try{const v=JSON.parse(localStorage.getItem("thA2state")||"null");if(v)ST={ink:v.ink||{},pads:v.pads||{},ans:v.ans||{}}}catch(e){}
+let saveT=null;function saveST(){clearTimeout(saveT);saveT=setTimeout(()=>{try{localStorage.setItem("thA2state",JSON.stringify(ST))}catch(e){}},300)}
+let replaying=false;
+function renderQ(q,n,onAnswer,key){
+  const d=document.createElement("div");d.className="q";
+  d.innerHTML=`<div class="qnum">ข้อ ${n}</div><div class="qhead"><div class="th">${q.q}</div><button class="say" data-say="${esc(q.q.replace(/<[^>]+>/g,""))}" aria-label="Ouvir o enunciado">🔊</button></div>${wbw(q.q)}${q.pt?`<button class="tr">แปล · ver tradução</button><span class="pt" hidden>${q.pt}</span>`:""}`;
+  const fb=document.createElement("div");
+  if(q.t==="open"){
+    const ta=pad(110,key?key+"|pad":null);
+    const row=document.createElement("div");row.className="row";
+    const show=document.createElement("button");show.className="btn ghost";show.textContent="Ver resposta modelo";
+    show.onclick=()=>{show.remove();fb.className="fb ok";fb.innerHTML=`Modelo: <span class="th">${q.model}</span> <button class="say" data-say="${esc(q.model)}" aria-label="Ouvir">🔊</button>`;
+      const y=document.createElement("button");y.className="btn";y.textContent="Acertei";const n=document.createElement("button");n.className="btn ghost";n.textContent="Errei";
+      const done=ok=>{y.remove();n.remove();if(key&&!replaying){ST.ans[key]={ok};saveST()}onAnswer&&onAnswer(ok)};y.onclick=()=>done(true);n.onclick=()=>done(false);row.append(y,n);return done};
+    row.appendChild(show);d.append(ta,row);d.appendChild(fb);
+    const sv=key&&ST.ans[key];if(sv&&"ok" in sv){replaying=true;show.onclick()(sv.ok);replaying=false}
+    return d;
+  }
+  if(q.t==="mc"){
+    const box=document.createElement("div");box.className="opts";
+    const order=shuffle(q.o.map((o,i)=>i));
+    order.forEach(i=>{const b=document.createElement("button");b.className="opt th";b.style.fontSize="1.15rem";b.textContent=q.o[i];
+      b.dataset.i=i;b.onclick=()=>{box.querySelectorAll("button").forEach(x=>x.disabled=true);const ok=i===q.a;if(key&&!replaying){ST.ans[key]={i};saveST()}
+        b.classList.add(ok?"right":"wrong");if(!ok)[...box.children][order.indexOf(q.a)].classList.add("right");
+        fb.className="fb "+(ok?"ok":"no");fb.textContent=(ok?"Certo! ":"Ainda não. ")+(q.why||"");const ra=q.o[q.a];if(/[\u0E00-\u0E7F]/.test(ra)){const sb=document.createElement("div");sb.style.marginTop="6px";sb.innerHTML=`Resposta certa: <span class="th">${ra}</span> <button class="say" data-say="${esc(ra)}" aria-label="Ouvir a resposta">🔊</button>`;fb.appendChild(sb)}onAnswer&&onAnswer(ok)};
+      box.appendChild(b)});
+    d.appendChild(box);
+    const sv=key&&ST.ans[key];if(sv&&"i" in sv){const b=box.querySelector(`[data-i="${sv.i}"]`);if(b){replaying=true;b.click();replaying=false}}
+  } else {
+    const ans=document.createElement("div");ans.className="answer";
+    const tiles=document.createElement("div");tiles.className="tiles";
+    shuffle(q.tiles).forEach(t=>{const b=document.createElement("button");b.className="tile";b.textContent=t;
+      b.onclick=()=>{(b.parentNode===tiles?ans:tiles).appendChild(b)};tiles.appendChild(b)});
+    const row=document.createElement("div");row.className="row";
+    const chk=document.createElement("button");chk.className="btn";chk.textContent="Corrigir";
+    chk.onclick=()=>{const got=[...ans.children].map(x=>x.textContent).join("");
+      if(ans.children.length<q.tiles.length){fb.className="fb no";fb.textContent="Use todas as peças antes de corrigir.";return}
+      const ok=q.a.includes(got);chk.disabled=true;if(key&&!replaying){ST.ans[key]={got:[...ans.children].map(x=>x.textContent)};saveST()}d.querySelectorAll(".tile").forEach(x=>x.disabled=true);
+      fb.className="fb "+(ok?"ok":"no");fb.innerHTML=(ok?"Certo! ":"Ainda não. Resposta: ")+`<span class="th">${q.a[0]}</span> <button class="say" data-say="${esc(q.a[0])}" aria-label="Ouvir a resposta">🔊</button>`;if(!replaying)say(q.a[0]);onAnswer&&onAnswer(ok)};
+    row.appendChild(chk);d.append(ans,tiles,row);
+    const sv=key&&ST.ans[key];if(sv&&sv.got){replaying=true;sv.got.forEach(t=>{const b=[...tiles.children].find(x=>x.textContent===t);if(b)ans.appendChild(b)});if(!tiles.children.length)chk.onclick();replaying=false}
+  }
+  d.appendChild(fb);return d;
+}
+/* ---------- escrita com a caneta (SVG: sem limite de tamanho, traço liso) ---------- */
+const NS="http://www.w3.org/2000/svg";let penSeen=false;
+function inkEngine(svg,getStrokes,isOn,color,onChange){
+  let act=null,path=null,pid=null;
+  const W=()=>svg.getBoundingClientRect().width||1;
+  const dOf=(st,w)=>st.p.map((q,i)=>(i?"L":"M")+(q[0]*w).toFixed(1)+" "+q[1].toFixed(1)).join("");
+  const mk=st=>{const el=document.createElementNS(NS,"path");el.setAttribute("fill","none");el.setAttribute("stroke",color());el.setAttribute("stroke-width",st.w);
+    el.setAttribute("stroke-linecap","round");el.setAttribute("stroke-linejoin","round");svg.appendChild(el);return el};
+  const render=()=>{svg.querySelectorAll("path").forEach(x=>x.remove());const w=W();getStrokes().forEach(st=>{mk(st).setAttribute("d",dOf(st,w))})};
+  const pos=e=>{const r=svg.getBoundingClientRect();return[(e.clientX-r.left)/(r.width||1),e.clientY-r.top]};
+  svg.addEventListener("pointerdown",e=>{if(!isOn())return;if(e.pointerType==="pen")penSeen=true;else if(penSeen&&e.pointerType==="touch")return;
+    if(act)return;pid=e.pointerId;act={w:e.pointerType==="pen"?2.4:3,p:[pos(e)]};getStrokes().push(act);path=mk(act);
+    path.setAttribute("d",dOf(act,W())+"l0.1 0");try{svg.setPointerCapture(pid)}catch(_){}e.preventDefault()});
+  svg.addEventListener("pointermove",e=>{if(!act||e.pointerId!==pid)return;const w=W();
+    const evs=e.getCoalescedEvents?e.getCoalescedEvents():[e];let add="";
+    (evs.length?evs:[e]).forEach(ev=>{const q=pos(ev);act.p.push(q);add+="L"+(q[0]*w).toFixed(1)+" "+q[1].toFixed(1)});
+    path.setAttribute("d",path.getAttribute("d")+add);e.preventDefault()});
+  const end=e=>{if(e.pointerId!==pid)return;act=null;path=null;pid=null;onChange&&onChange()};
+  svg.addEventListener("pointerup",end);svg.addEventListener("pointercancel",end);
+  ["touchstart","touchmove"].forEach(t=>svg.addEventListener(t,e=>{if(isOn())e.preventDefault()},{passive:false}));
+  return render;
+}
+function pad(h,key){
+  const w=document.createElement("div");w.className="pad";
+  const svg=document.createElementNS(NS,"svg");svg.setAttribute("class","inkable padsvg");svg.style.height=h+"px";
+  const row=document.createElement("div");row.className="row";
+  const clr=document.createElement("button");clr.className="btn ghost";clr.textContent="Apagar";
+  const und=document.createElement("button");und.className="btn ghost";und.textContent="Desfazer";
+  const note=document.createElement("span");note.className="warn";note.textContent="Escreva com a Apple Pencil ou com o dedo.";
+  row.append(und,clr,note);w.append(svg,row);
+  const strokes=key?(ST.pads[key]=ST.pads[key]||[]):[];const color=()=>getComputedStyle(document.documentElement).getPropertyValue("--ink").trim()||"#1d1a33";
+  const render=inkEngine(svg,()=>strokes,()=>true,color,()=>key&&saveST());
+  try{new ResizeObserver(render).observe(svg)}catch(e){}
+  clr.onclick=()=>{strokes.length=0;render();key&&saveST()};und.onclick=()=>{strokes.pop();render();key&&saveST()};
+  return w;
+}
+function quizBlock(lesson){
+  if(!lesson.quiz.length)return null;
+  const w=document.createElement("div");w.className="quiz";
+  w.innerHTML=`<h3 style="margin-top:0">Teste esta aula</h3>`;
+  let answered=0,right=0;const sc=document.createElement("div");sc.className="score";
+  lesson.quiz.forEach((q,i)=>w.appendChild(renderQ(q,i+1,ok=>{answered++;if(ok)right++;
+    if(answered===lesson.quiz.length){sc.textContent=`Você acertou ${right} de ${answered}.`;if(right/answered>=.8)markDone(lesson.id)}},lesson.id+"|"+q.q)));
+  const redo=document.createElement("button");redo.className="btn ghost";redo.textContent="Refazer este teste";redo.style.marginTop="10px";
+  redo.onclick=()=>{lesson.quiz.forEach(q=>{delete ST.ans[lesson.id+"|"+q.q];delete ST.pads[lesson.id+"|"+q.q+"|pad"]});saveST();const nw=quizBlock(lesson);w.replaceWith(nw)};
+  w.append(sc,redo);return w;
+}
+
+/* ---------- horas ---------- */
+const N=["","หนึ่ง","สอง","สาม","สี่","ห้า","หก","เจ็ด","แปด","เก้า","สิบ","สิบเอ็ด"];
+function num(n){if(n<=10)return N[n];const t=Math.floor(n/10),u=n%10;return (t===1?"":t===2?"ยี่":N[t])+"สิบ"+(u===0?"":u===1?"เอ็ด":N[u])}
+function thaiTime(h,m){
+  let base,full;
+  if(h===0){base="เที่ยงคืน";full=base}
+  else if(h<=5){base="ตี"+N[h];full=base}
+  else if(h<=11){base=N[h]+"โมง";full=base+"เช้า"}
+  else if(h===12){base="เที่ยง";full="เที่ยงวัน"}
+  else if(h===13){base="บ่ายโมง";full=base}
+  else if(h<=15){base="บ่าย"+N[h-12]+"โมง";full=base}
+  else if(h<=18){base=N[h-12]+"โมง";full=base+"เย็น"}
+  else {base=N[h-18]+"ทุ่ม";full=base}
+  if(m===0)return full;
+  if(m===30)return base+"ครึ่ง";
+  return base+num(m)+"นาที";
+}
+function fmt(h,m){return String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")}
+function randTime(){const h=Math.floor(Math.random()*24);const m=[0,0,30,15,45,10,20][Math.floor(Math.random()*7)];return[h,m]}
+function timeQ(){
+  const [h,m]=randTime();const right=thaiTime(h,m);
+  const pool=new Set([right]);[12,6,18,1,23,5,7].forEach(d=>{if(pool.size<4)pool.add(thaiTime((h+d)%24,m))});
+  const o=[...pool];
+  if(Math.random()<.5) return {t:"mc",q:`${fmt(h,m)} พูดว่าอย่างไร`,pt:`Como se diz ${fmt(h,m)}?`,o,a:0,why:`${fmt(h,m)} = ${right}`};
+  const ot=[fmt(h,m)];[12,6,18,1].forEach(d=>{const x=fmt((h+d)%24,m);if(!ot.includes(x)&&ot.length<4)ot.push(x)});
+  return {t:"mc",q:right+" คือกี่โมง",pt:right+" é que horas?",o:ot,a:0,why:`${right} = ${fmt(h,m)}`};
+}
+function clockTrainer(el){
+  let r=0,t=0;
+  const draw=()=>{el.innerHTML=`<div class="score" id="clkScore">${t?`${r} de ${t} certas`:"Toque para começar"}</div>`;
+    const q=timeQ();el.appendChild(renderQ(q,t+1,ok=>{t++;if(ok)r++;el.querySelector("#clkScore").textContent=`${r} de ${t} certas`;say(q.why.split(" = ")[/^\d/.test(q.q)?1:0])}));
+    const row=document.createElement("div");row.className="row";const b=document.createElement("button");b.className="btn ghost";b.textContent="Próximo horário";b.onclick=draw;row.appendChild(b);el.appendChild(row)};
+  draw();
+}
+
+/* ---------- prova ---------- */
+function newExam(){
+  const area=document.getElementById("examArea");area.innerHTML="";
+  const pool=shuffle(L.flatMap(l=>l.quiz)).slice(0,12).concat([timeQ(),timeQ(),timeQ()]);
+  const qs=shuffle(pool);let a=0,r=0;const sc=document.createElement("div");sc.className="score";sc.style.marginTop="12px";
+  const w=document.createElement("div");w.className="quiz";
+  qs.forEach((q,i)=>w.appendChild(renderQ(q,i+1,ok=>{a++;if(ok)r++;if(a===qs.length){sc.textContent=`Resultado: ${r} de ${qs.length}. `+(r>=12?"Pronta para a prova!":"Revise as aulas onde errou e faça outra.")}})));
+  w.appendChild(sc);area.appendChild(w);
+}
+
+/* ---------- anotar com a Apple Pencil ---------- */
+const inkStore=ST.ink;let inkOn=false;
+const ink=document.createElementNS(NS,"svg");ink.id="ink";ink.setAttribute("class","inkable");document.getElementById("main").appendChild(ink);
+const inkRender=inkEngine(ink,()=>(inkStore[cur]=inkStore[cur]||[]),()=>inkOn,()=>getComputedStyle(document.documentElement).getPropertyValue("--saffron").trim()||"#e8930c",saveST);
+function inkSize(){const m=document.getElementById("main");ink.style.height=m.scrollHeight+"px";inkRender()}
+try{new ResizeObserver(()=>{const m=document.getElementById("main");if(parseFloat(ink.style.height)!==m.scrollHeight)inkSize()}).observe(document.getElementById("main"))}catch(e){}
+const tg=document.getElementById("inkToggle"),un=document.getElementById("inkUndo"),cl=document.getElementById("inkClear");
+tg.onclick=()=>{inkOn=!inkOn;ink.classList.toggle("on",inkOn);document.body.classList.toggle("inking",inkOn);tg.textContent=inkOn?"✓ Terminar anotação":"✏️ Anotar";un.hidden=cl.hidden=!inkOn;inkSize()};
+un.onclick=()=>{(inkStore[cur]||[]).pop();inkRender();saveST()};cl.onclick=()=>{inkStore[cur]=[];inkRender();saveST()};
+/* ---------- navegação ---------- */
+let cur=L[0].id;try{cur=localStorage.getItem("thA2cur")||cur}catch(e){}
+if(location.hash&&L.some(l=>l.id===location.hash.slice(1)))cur=location.hash.slice(1);
+function renderChips(id){
+  const nav=document.getElementById("chips");nav.innerHTML="";
+  L.forEach(l=>{const b=document.createElement("button");b.innerHTML=(done[l.id]?'<span class="done">✓ </span>':"")+l.chip;b.setAttribute("aria-current",l.id===id);b.onclick=()=>show(l.id,true);nav.appendChild(b)});
+}
+function show(id,scroll){
+  cur=id;try{localStorage.setItem("thA2cur",id)}catch(e){}
+  const l=L.find(x=>x.id===id);const m=document.getElementById("main");
+  if(inkOn)tg.click();
+  m.innerHTML=`<section class="section"><div class="eyebrow">${l.tag}</div><h2>${l.title}</h2>${l.html}</section>`;
+  const q=quizBlock(l);if(q)m.querySelector("section").appendChild(q);
+  if(l.id!=="prova"){const fs=document.createElement("div");fs.className="box";fs.innerHTML="<h3 style='margin-top:0'>Folha para escrever</h3><p class='warn'>Copie as palavras da aula, treine a escrita ou faça rascunho.</p>";fs.appendChild(pad(320,l.id+"|folha"));m.querySelector("section").appendChild(fs)}
+  const i=L.indexOf(l);if(i<L.length-1){const row=document.createElement("div");row.className="row";row.style.marginTop="18px";
+    const b=document.createElement("button");b.className="btn ghost";b.textContent="Próxima: "+L[i+1].chip+" →";b.onclick=()=>show(L[i+1].id,true);row.appendChild(b);m.appendChild(row)}
+  const ct=document.getElementById("clockTrainer");if(ct)clockTrainer(ct);
+  const ne=document.getElementById("newExam");if(ne){ne.onclick=newExam;newExam()}
+  renderChips(id);m.appendChild(ink);requestAnimationFrame(inkSize);
+  if(scroll)document.getElementById("chips").scrollIntoView({behavior:"smooth",block:"start"});
+}
+show(cur,false);
+window.addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(L.some(l=>l.id===h))show(h,true)});
+</script>
+
+</body></html>
